@@ -42,13 +42,13 @@ public class UserRepositoryImpl implements IUserRepository {
     }
 
     @Override
-    public User save(User user) {
+    public Optional<User> save(User user) {
         if (user == null) {
             // TODO: handle null here
+        } else {
+
         }
-        return entityToDomain(
-                userRepositoryJpa.save(domainToEntity(user))
-        );
+        return Optional.empty(); // ????
     }
 
     @Override

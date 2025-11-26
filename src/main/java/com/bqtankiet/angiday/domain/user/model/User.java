@@ -20,6 +20,32 @@ public class User {
         this.phone = phone;
     }
 
+    public static String maskEmail(String email) {
+        if (email == null || !email.contains("@")) {
+            return "*****";
+        }
+        int atIndex = email.indexOf("@");
+        String prefix = email.substring(0, Math.min(2, atIndex));
+        String suffix = email.substring(atIndex);
+        return prefix + "*****" + suffix;
+    }
+
+    public static String maskPhone(String phone) {
+        if (phone == null || phone.length() < 6) {
+            return "*****";
+        }
+        String prefix = phone.substring(0, 3);
+        String suffix = phone.substring(phone.length() - 3);
+        return prefix + "*****" + suffix;
+    }
+
+    public String getMaskedEmail() {
+        return maskEmail(email);
+    }
+
+    public String getMaskedPhone() {
+        return maskPhone(phone);
+    }
 
     @Override
     public boolean equals(Object o) {

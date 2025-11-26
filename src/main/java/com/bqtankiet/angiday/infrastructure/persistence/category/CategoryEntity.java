@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.user;
+package com.bqtankiet.angiday.infrastructure.persistence.category;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,16 +7,15 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "users")
-public class UserEntity {
-
+@Table(name = "categories")
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    private String email;
-    private String phone;
-    private String hashedPassword;
 
+    private String imageUrl;
 }
+
+

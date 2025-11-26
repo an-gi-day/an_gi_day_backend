@@ -1,6 +1,6 @@
 spring:
   application:
-    name: CleanArchitect
+    name: AnGiDay
 
   profiles:
     active: h2

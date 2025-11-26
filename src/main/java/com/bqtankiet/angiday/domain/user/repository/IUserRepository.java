@@ -11,6 +11,6 @@ public interface IUserRepository {
     Optional<User> findByName(String name);
     Optional<User> findByEmail(String email);
     Optional<User> findByPhone(String phone);
-    User save(User user);
+    Optional<User> save(User user);
     List<User> findAll();
 }
