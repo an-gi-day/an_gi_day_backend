@@ -1,0 +1,16 @@
+package com.bqtankiet.angiday.domain.user.repository;
+
+import com.bqtankiet.angiday.domain.user.model.User;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface IUserRepository {
+
+    Optional<User> findById(Long id);
+    Optional<User> findByName(String name);
+    Optional<User> findByEmail(String email);
+    Optional<User> findByPhone(String phone);
+    User save(User user);
+    List<User> findAll();
+}

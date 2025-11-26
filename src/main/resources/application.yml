@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: CleanArchitect
+
+  profiles:
+    active: h2
