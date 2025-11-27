@@ -44,7 +44,8 @@ I have published a Postman documentation. You can view it here: https://document
 
 #### Postman Local
 1. Open Postman application
-2. Create new Workspace named
+2. Create new Workspace
 3. Select `From Git Repository`
-<img width=400px src="./resources/postman-create-workspace.png"/>
-5. Press `Next` and choose the repo folder you have cloned 
+  <img width=400px src="./resources/postman-create-workspace.png"/>
+  
+4. Press `Next` and choose the repo folder you have cloned 
