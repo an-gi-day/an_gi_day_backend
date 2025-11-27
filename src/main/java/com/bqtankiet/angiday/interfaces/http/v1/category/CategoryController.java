@@ -37,7 +37,7 @@ public class CategoryController {
                     .map(categoryMapper::modelToDto)
                     .toList();
             ApiResponse<List<CategoryResponseDto>> apiResponse = ApiResponse.success(dtoList);
-            apiResponse.setMetadata(Map.of("size", categories.size()));
+            apiResponse.addMetadata("size", categories.size());
             return ResponseEntity.ok(apiResponse);
     }
 }

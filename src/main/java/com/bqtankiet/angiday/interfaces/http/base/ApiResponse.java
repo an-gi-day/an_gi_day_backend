@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class ApiResponse<T> {
     private T data;
     private List<String> errors;
     private LocalDateTime timestamp = LocalDateTime.now();
-    private Map<?, ?> metadata = null;
+    private Map<String, Object> metadata = null;
 
     public ApiResponse() {
     }
@@ -32,6 +33,13 @@ public class ApiResponse<T> {
         this.message = message;
         this.data = data;
         this.errors = errors;
+    }
+
+    public void addMetadata(String key, Object value) {
+        if (this.metadata == null) {
+            this.metadata = new HashMap<>();
+        }
+        metadata.put(key, value);
     }
 
     // SUCCESS

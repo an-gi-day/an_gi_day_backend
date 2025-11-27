@@ -12,15 +12,17 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UnsupportedOperationException.class)
     public ResponseEntity<ApiResponse<?>> handleUnsupportedException(UnsupportedOperationException exception) {
-        String message = "Error caused by UnsupportedOperationException";
-        ApiResponse<?> response = ApiResponse.errorWithMessage(HttpStatus.NOT_FOUND.value(), message ,exception.getMessage());
+        String error = "Error caused by " + exception.getClass().getSimpleName();
+        String message = exception.getMessage();
+        ApiResponse<?> response = ApiResponse.errorWithMessage(HttpStatus.NOT_FOUND.value(), message, error);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<ApiResponse<?>> handleUnsupportedException(EntityNotFoundException exception) {
-        String message = "Error caused by EntityNotFoundException";
-        ApiResponse<?> response = ApiResponse.errorWithMessage(HttpStatus.NOT_FOUND.value(), message ,exception.getMessage());
+        String error = "Error caused by " + exception.getClass().getSimpleName();
+        String message = exception.getMessage();
+        ApiResponse<?> response = ApiResponse.errorWithMessage(HttpStatus.NOT_FOUND.value(), message, error);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 

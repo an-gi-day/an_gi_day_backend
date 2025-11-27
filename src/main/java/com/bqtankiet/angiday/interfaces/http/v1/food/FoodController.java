@@ -33,6 +33,7 @@ public class FoodController {
                 .map(foodJpaMapper::modelToDto)
                 .toList();
         var resp = ApiResponse.success(dto);
+        resp.addMetadata("size", dto.size());
         return ResponseEntity.ok(resp);
     }
 

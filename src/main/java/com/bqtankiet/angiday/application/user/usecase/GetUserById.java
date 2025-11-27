@@ -27,7 +27,7 @@ public class GetUserById implements UseCase<GetUserById.Input, GetUserById.Outpu
         if (result.isPresent()) {
             return new Output(result.get());
         } else {
-            throw new EntityNotFoundException("User not found");
+            throw new EntityNotFoundException("User not found with id: " + id);
         }
     }
 
