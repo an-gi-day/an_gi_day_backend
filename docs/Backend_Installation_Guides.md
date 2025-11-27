@@ -23,7 +23,7 @@ cd an_gi_day_backend
 > **Note**: The initial database schema is located at `/src/main/resources/data.sql`
 
 ## 2 API Document
-I have published a Postman documentation. You can view it here: https://documenter.getpostman.com/view/43499672/2sB3dK1DBc
+I have published a Postman documentation. You can view it here: https://documenter.getpostman.com/view/43499672/2sB3dK1YSC
 
 ### How to use the Document
 1. Access the Postman documentation page.
@@ -46,3 +46,4 @@ I have published a Postman documentation. You can view it here: https://document
 2. Create new Workspace named
 3. Select `From Git Repository`
 ![Create Postman Workspace](./resources/postman-create-workspace.png)
+4. Press `Next` and choose the repo folder you have cloned 

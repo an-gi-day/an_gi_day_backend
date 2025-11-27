@@ -1,9 +1,8 @@
 {
   "info": {
-    "_postman_id": "461922dc-b747-43a0-ae54-a1bd8b2afc47",
+    "_postman_id": "88c2e5a2-c446-4179-93d0-9528ce75df78",
     "name": "AnGiDay",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "43499672"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
@@ -11,10 +10,9 @@
       "item": [
         {
           "name": "/api/v1/foods",
-          "id": "dd2c8222-9653-43fc-9382-81bddf25475f",
+          "id": "644f7b59-1b8b-4089-bb92-75f29720a715",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/api/v1/foods",
               "host": [
@@ -29,11 +27,10 @@
           },
           "response": [
             {
-              "id": "d7b0fad9-5c92-424e-9e10-1978ddf556e3",
+              "id": "97825c83-418d-417d-8072-663603b7cb4a",
               "name": "success",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/foods",
                   "host": [
@@ -49,6 +46,7 @@
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -80,7 +78,7 @@
                 },
                 {
                   "key": "Date",
-                  "value": "Thu, 27 Nov 2025 06:11:09 GMT"
+                  "value": "Thu, 27 Nov 2025 09:04:50 GMT"
                 },
                 {
                   "key": "Keep-Alive",
@@ -91,23 +89,21 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
-              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Gà rán sốt cay\",\n            \"description\": \"Món gà rán cay ngon tuyệt vời, giòn rụm, đậm đà hương vị.\",\n            \"imageUrl\": \"https://media.loveitopcdn.com/24813/thumb/600x600/z4564243657819-f5b393659a568f6a0d4e329ac92bb3b4.jpg?zc=1\",\n            \"basePrice\": 59000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Gà rán\",\n                \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n            },\n            \"brand\": {\n                \"id\": 3,\n                \"name\": \"KFC\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Cơm gà sốt cay\",\n            \"description\": \"Cơm gà sốt cay thơm ngon, đậm đà, phù hợp khẩu vị mọi người.\",\n            \"imageUrl\": \"https://jollibee.com.vn/media/catalog/product/cache/11f3e6435b23ab624dc55c2d3fe9479d/g/_/g_s_t_cay_-_4-compressed.jpg\",\n            \"basePrice\": 65000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Gà rán\",\n                \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n            },\n            \"brand\": {\n                \"id\": 4,\n                \"name\": \"Jollibee\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/W_DYClcNS6Jge8IZJIocA_fr6qkz7wbB_Xq92o8ACa-nYRl8ZzAiVenxqdPxu5aFb3Mb\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Bánh mì thập cẩm\",\n            \"description\": \"Bánh mì thập cẩm với nhiều loại nhân hấp dẫn, ngon miệng.\",\n            \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\",\n            \"basePrice\": 29000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Bánh mì\",\n                \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n            },\n            \"brand\": {\n                \"id\": 2,\n                \"name\": \"Bánh mì Huỳnh Hoa\",\n                \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Pizza bò Hàn Quốc\",\n            \"description\": \"Pizza bò Hàn Quốc với phô mai béo ngậy và thịt bò mềm mại.\",\n            \"imageUrl\": \"https://pizzahut.vn/_next/image?url=https%3A%2F%2Fcdn.pizzahut.vn%2Fimages%2FWeb_V3%2FProducts_MenuTool%2FBulgogi._20251029134256KCW.webp&w=1024&q=100\",\n            \"basePrice\": 120000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 6,\n                \"name\": \"Pizza\",\n                \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n            },\n            \"brand\": {\n                \"id\": 5,\n                \"name\": \"Pizza Hut\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Pizza phô mai\",\n            \"description\": \"Pizza phô mai thơm ngon, béo ngậy với lớp phô mai tan chảy hấp dẫn.\",\n            \"imageUrl\": \"https://pizzahut.vn/_next/image?url=https%3A%2F%2Fcdn.pizzahut.vn%2Fimages%2FWeb_V3%2FProducts_MenuTool%2FCheese%20Lover%20with%20honey._20250317172143IO1.webp&w=1170&q=75\",\n            \"basePrice\": 110000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 6,\n                \"name\": \"Pizza\",\n                \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n            },\n            \"brand\": {\n                \"id\": 5,\n                \"name\": \"Pizza Hut\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Bánh bao thịt\",\n            \"description\": \"Bánh bao thịt nóng hổi, nhân thịt thơm ngon, mềm mịn.\",\n            \"imageUrl\": \"https://noiphosaigon.vn/wp-content/uploads/2020/09/cach-lam-banh-bao-nhan-thit-thom-ngon.jpg\",\n            \"basePrice\": 25000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 7,\n                \"name\": \"Bento\",\n                \"imageUrl\": \"https://thumbs.dreamstime.com/b/japanese-bento-box-asian-style-lunch-sushi-rolls-salad-fresh-sea-food-top-view-nori-maki-meat-cooked-vegetables-rice-329549683.jpg\"\n            },\n            \"brand\": {\n                \"id\": 3,\n                \"name\": \"KFC\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Bánh mì Huỳnh Hoa\",\n            \"description\": \"Bánh mì Huỳnh Hoa đặc sản nổi tiếng, giòn tan, đậm đà hương vị.\",\n            \"imageUrl\": \"https://banhmihuynhhoa.vn/wp-content/uploads/2024/10/dscf0711-min-1-300x300.jpg\",\n            \"basePrice\": 40000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Bánh mì\",\n                \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n            },\n            \"brand\": {\n                \"id\": 2,\n                \"name\": \"Bánh mì Huỳnh Hoa\",\n                \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n            }\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:09.2939693\",\n    \"metadata\": {\n        \"size\": 7\n    }\n}"
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Gà rán sốt cay\",\n            \"description\": \"Món gà rán cay ngon tuyệt vời, giòn rụm, đậm đà hương vị.\",\n            \"imageUrl\": \"https://media.loveitopcdn.com/24813/thumb/600x600/z4564243657819-f5b393659a568f6a0d4e329ac92bb3b4.jpg?zc=1\",\n            \"basePrice\": 59000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Gà rán\",\n                \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n            },\n            \"brand\": {\n                \"id\": 3,\n                \"name\": \"KFC\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Cơm gà sốt cay\",\n            \"description\": \"Cơm gà sốt cay thơm ngon, đậm đà, phù hợp khẩu vị mọi người.\",\n            \"imageUrl\": \"https://jollibee.com.vn/media/catalog/product/cache/11f3e6435b23ab624dc55c2d3fe9479d/g/_/g_s_t_cay_-_4-compressed.jpg\",\n            \"basePrice\": 65000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Gà rán\",\n                \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n            },\n            \"brand\": {\n                \"id\": 4,\n                \"name\": \"Jollibee\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/W_DYClcNS6Jge8IZJIocA_fr6qkz7wbB_Xq92o8ACa-nYRl8ZzAiVenxqdPxu5aFb3Mb\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Bánh mì thập cẩm\",\n            \"description\": \"Bánh mì thập cẩm với nhiều loại nhân hấp dẫn, ngon miệng.\",\n            \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\",\n            \"basePrice\": 29000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Bánh mì\",\n                \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n            },\n            \"brand\": {\n                \"id\": 2,\n                \"name\": \"Bánh mì Huỳnh Hoa\",\n                \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Pizza bò Hàn Quốc\",\n            \"description\": \"Pizza bò Hàn Quốc với phô mai béo ngậy và thịt bò mềm mại.\",\n            \"imageUrl\": \"https://pizzahut.vn/_next/image?url=https%3A%2F%2Fcdn.pizzahut.vn%2Fimages%2FWeb_V3%2FProducts_MenuTool%2FBulgogi._20251029134256KCW.webp&w=1024&q=100\",\n            \"basePrice\": 120000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 6,\n                \"name\": \"Pizza\",\n                \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n            },\n            \"brand\": {\n                \"id\": 5,\n                \"name\": \"Pizza Hut\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Pizza phô mai\",\n            \"description\": \"Pizza phô mai thơm ngon, béo ngậy với lớp phô mai tan chảy hấp dẫn.\",\n            \"imageUrl\": \"https://pizzahut.vn/_next/image?url=https%3A%2F%2Fcdn.pizzahut.vn%2Fimages%2FWeb_V3%2FProducts_MenuTool%2FCheese%20Lover%20with%20honey._20250317172143IO1.webp&w=1170&q=75\",\n            \"basePrice\": 110000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 6,\n                \"name\": \"Pizza\",\n                \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n            },\n            \"brand\": {\n                \"id\": 5,\n                \"name\": \"Pizza Hut\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Bánh bao thịt\",\n            \"description\": \"Bánh bao thịt nóng hổi, nhân thịt thơm ngon, mềm mịn.\",\n            \"imageUrl\": \"https://noiphosaigon.vn/wp-content/uploads/2020/09/cach-lam-banh-bao-nhan-thit-thom-ngon.jpg\",\n            \"basePrice\": 25000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 7,\n                \"name\": \"Bento\",\n                \"imageUrl\": \"https://thumbs.dreamstime.com/b/japanese-bento-box-asian-style-lunch-sushi-rolls-salad-fresh-sea-food-top-view-nori-maki-meat-cooked-vegetables-rice-329549683.jpg\"\n            },\n            \"brand\": {\n                \"id\": 3,\n                \"name\": \"KFC\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Bánh mì Huỳnh Hoa\",\n            \"description\": \"Bánh mì Huỳnh Hoa đặc sản nổi tiếng, giòn tan, đậm đà hương vị.\",\n            \"imageUrl\": \"https://banhmihuynhhoa.vn/wp-content/uploads/2024/10/dscf0711-min-1-300x300.jpg\",\n            \"basePrice\": 40000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Bánh mì\",\n                \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n            },\n            \"brand\": {\n                \"id\": 2,\n                \"name\": \"Bánh mì Huỳnh Hoa\",\n                \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n            }\n        }\n    ],\n    \"timestamp\": \"2025-11-27T16:04:50.3617754\",\n    \"metadata\": {\n        \"size\": 7\n    }\n}"
             }
           ]
         }
       ],
-      "id": "0f1801de-6cc5-4929-9ea1-5aac96563b92"
+      "id": "671f78fb-d7f4-459a-8137-d56fded8381f"
     },
     {
       "name": "categories",
       "item": [
         {
           "name": "/api/v1/categories",
-          "id": "7914340f-ea57-40ba-925c-04242f49e849",
+          "id": "5ee6464b-18e9-43ae-bbf0-b546bd76231f",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/api/v1/categories",
               "host": [
@@ -122,11 +118,10 @@
           },
           "response": [
             {
-              "id": "c7ab1602-b42d-4f6e-83a1-fa02df509192",
+              "id": "4a79744d-e99e-457b-ac98-068c33b7c38a",
               "name": "success",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/categories",
                   "host": [
@@ -142,6 +137,7 @@
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -184,23 +180,21 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
               "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Bánh mì\",\n            \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Bánh bao\",\n            \"imageUrl\": \"https://thumbs.dreamstime.com/b/banh-bao-isolated-white-background-delicious-steamed-bun-filled-savory-ingredients-363408595.jpg\"\n        },\n        {\n            \"id\": \"3\",\n            \"name\": \"Gà rán\",\n            \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n        },\n        {\n            \"id\": \"4\",\n            \"name\": \"Nước ngọt\",\n            \"imageUrl\": \"https://nutifood.com.vn/files/nutritionhouse/NUTIFOOD-SSQ/PRODUCT/PACKSHOT/2-PACKSHOTS/packshot-fruit-610x610px-eng.png\"\n        },\n        {\n            \"id\": \"5\",\n            \"name\": \"Mì trộn\",\n            \"imageUrl\": \"https://nemluji.vn/wp-content/uploads/2025/02/Dia-mi-tron-thap-cam.jpg\"\n        },\n        {\n            \"id\": \"6\",\n            \"name\": \"Pizza\",\n            \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n        },\n        {\n            \"id\": \"7\",\n            \"name\": \"Bento\",\n            \"imageUrl\": \"https://thumbs.dreamstime.com/b/japanese-bento-box-asian-style-lunch-sushi-rolls-salad-fresh-sea-food-top-view-nori-maki-meat-cooked-vegetables-rice-329549683.jpg\"\n        },\n        {\n            \"id\": \"8\",\n            \"name\": \"Ăn vặt\",\n            \"imageUrl\": \"https://nemnuonghungviet.com/nemhungviet/uploads/2024/11/an-vat-sai-gon-1.jpg\"\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:15.9178045\",\n    \"metadata\": {\n        \"size\": 8\n    }\n}"
             }
           ]
         }
       ],
-      "id": "0af7d457-db53-4d78-8349-02eea4a556d9"
+      "id": "ab9252a3-829a-4bec-8945-a2de5fee7860"
     },
     {
       "name": "brands",
       "item": [
         {
           "name": "/api/v1/brands",
-          "id": "29e4df9e-8611-49e4-9bef-9626a9b7e143",
+          "id": "dd0454e5-c1b0-4f61-9145-d38134c837ae",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/api/v1/brands",
               "host": [
@@ -215,11 +209,10 @@
           },
           "response": [
             {
-              "id": "72754db5-d7ce-463d-8c17-50135db4895b",
+              "id": "3251ea04-8de0-40ea-b25d-396ee5de6bb5",
               "name": "success",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/brands",
                   "host": [
@@ -235,6 +228,7 @@
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -277,17 +271,15 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
               "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Highland\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/WthZu0rfWhv08r5CF24ideqmnAJiJ3oPn6-LEUObkLG82EB6lHHjWuGzVLQJ0NOVEtd9\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Bánh mì Huỳnh Hoa\",\n            \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n        },\n        {\n            \"id\": \"3\",\n            \"name\": \"KFC\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n        },\n        {\n            \"id\": \"4\",\n            \"name\": \"Jollibee\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/W_DYClcNS6Jge8IZJIocA_fr6qkz7wbB_Xq92o8ACa-nYRl8ZzAiVenxqdPxu5aFb3Mb\"\n        },\n        {\n            \"id\": \"5\",\n            \"name\": \"Pizza Hut\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n        },\n        {\n            \"id\": \"6\",\n            \"name\": \"McDonald's\",\n            \"imageUrl\": \"https://loop.com.vn/storage/logo-m-01.jpg\"\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:25.8997123\",\n    \"metadata\": {\n        \"size\": 6\n    }\n}"
             }
           ]
         },
         {
           "name": "/api/v1/brands/{id}",
-          "id": "01bb8814-1498-41fd-a93b-6c64a8470ff7",
+          "id": "cddee4cc-fdd5-4920-b47a-6b755a35f3e2",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/api/v1/brands/1",
               "host": [
@@ -303,11 +295,10 @@
           },
           "response": [
             {
-              "id": "4a143e13-1f12-429b-9cc6-4565e93a89aa",
+              "id": "00fd02db-8a89-4e1e-96ab-7d75341173dc",
               "name": "success",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/brands/1",
                   "host": [
@@ -324,6 +315,7 @@
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -366,23 +358,21 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
               "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"brand\": {\n            \"id\": \"1\",\n            \"name\": \"Highland\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/WthZu0rfWhv08r5CF24ideqmnAJiJ3oPn6-LEUObkLG82EB6lHHjWuGzVLQJ0NOVEtd9\"\n        }\n    },\n    \"timestamp\": \"2025-11-27T13:00:41.5443974\"\n}"
             }
           ]
         }
       ],
-      "id": "9bac51e7-80e9-4fd3-abed-b5c90f45395d"
+      "id": "ec4a26ed-9043-4221-9cb4-2b0e0b2fa1b4"
     },
     {
       "name": "users",
       "item": [
         {
           "name": "/api/v1/users",
-          "id": "43b6220e-87e1-4c97-b526-575a5122bd96",
+          "id": "f7f20e99-ae90-4fa2-97e4-8deb4e0fad53",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/api/v1/users",
               "host": [
@@ -397,11 +387,10 @@
           },
           "response": [
             {
-              "id": "e19a5a03-2b97-4855-82e1-97f43aaa9684",
+              "id": "a8c32ffe-0434-4946-aedf-cf1d29f65936",
               "name": "success",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/users",
                   "host": [
@@ -417,6 +406,7 @@
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -459,17 +449,15 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
               "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Admin\",\n            \"email\": \"ad*****@example.com\",\n            \"phone\": \"012*****789\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Developer\",\n            \"email\": \"de*****@example.com\",\n            \"phone\": \"012*****987\"\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:38.7776892\",\n    \"metadata\": {\n        \"size\": 2\n    }\n}"
             }
           ]
         },
         {
           "name": "/api/v1/users/{id}",
-          "id": "c845b34c-c501-43cc-82fd-02ab5266ce4f",
+          "id": "9df6f5dd-bd2a-4647-b925-cae50422209f",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/api/v1/users/1",
               "host": [
@@ -485,11 +473,10 @@
           },
           "response": [
             {
-              "id": "e3873a35-6246-429b-8f3b-e6e02a2867ec",
+              "id": "3fe24de8-98f9-4355-a371-5547fd8b7986",
               "name": "success",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/users/1",
                   "host": [
@@ -506,6 +493,7 @@
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -548,15 +536,13 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
               "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"id\": \"1\",\n        \"name\": \"Admin\",\n        \"email\": \"admin@example.com\",\n        \"phone\": \"0123456789\"\n    },\n    \"timestamp\": \"2025-11-27T13:01:13.8854588\"\n}"
             },
             {
-              "id": "eeaae947-1eeb-4e71-bc02-005bdef4efa0",
+              "id": "2c5a00dd-346f-461d-ac24-5fcbbfca4288",
               "name": "not-found",
               "originalRequest": {
                 "method": "GET",
-                "header": [],
                 "url": {
                   "raw": "{{base_url}}/api/v1/users/999",
                   "host": [
@@ -573,6 +559,7 @@
               "status": "Not Found",
               "code": 404,
               "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
               "header": [
                 {
                   "key": "X-Content-Type-Options",
@@ -615,13 +602,12 @@
                   "value": "keep-alive"
                 }
               ],
-              "cookie": [],
               "body": "{\n    \"code\": 404,\n    \"success\": false,\n    \"message\": \"User not found with id: 999\",\n    \"errors\": [\n        \"Error caused by EntityNotFoundException\"\n    ],\n    \"timestamp\": \"2025-11-27T13:19:56.5898163\"\n}"
             }
           ]
         }
       ],
-      "id": "3a8f1441-a65f-4bc1-84ba-4099d9a0cc90"
+      "id": "1e34648a-7d46-489c-8961-a99862dd7b9d"
     }
   ]
 }
