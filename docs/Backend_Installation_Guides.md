@@ -34,8 +34,15 @@ I have published a Postman documentation. You can view it here: https://document
 ![postman-image](./resources/postman-image.png)
 
 ### How to run in Postman
+#### Postman Web
 1. Click the button <img width=64px src="https://assets.postman.com/postman-docs/run-in-postman-button-icon.jpg#icon"/>
 2. Choose Run in `Postman for Web`
 3. Then choose a workspace to import into (if you don't have, create it first)
 4. Postman will notify you if the import is successful.
 ![import-success](./resources/postman-import-success.png)
+
+#### Postman Local
+1. Open Postman application
+2. Create new Workspace named
+3. Select `From Git Repository`
+![Create Postman Workspace](./resources/postman-create-workspace.png)
