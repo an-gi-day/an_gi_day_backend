@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author bqtankiet
+ */
 @Service
 public class GetAllCategory implements UseCase<GetAllCategory.Input, GetAllCategory.Output> {
 

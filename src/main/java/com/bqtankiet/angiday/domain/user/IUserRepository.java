@@ -3,6 +3,9 @@ package com.bqtankiet.angiday.domain.user;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author bqtankiet
+ */
 public interface IUserRepository {
 
     Optional<User> findById(Long id);

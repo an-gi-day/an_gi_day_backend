@@ -7,6 +7,9 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author bqtankiet
+ */
 @Service
 public class GetBrandById implements UseCase<GetBrandById.Input, GetBrandById.Output> {
 

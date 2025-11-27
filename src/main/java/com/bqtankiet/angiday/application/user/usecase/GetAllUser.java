@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author bqtankiet
+ */
 @Service
 public class GetAllUser implements UseCase<GetAllUser.MaskFlag, GetAllUser.Output> {
 

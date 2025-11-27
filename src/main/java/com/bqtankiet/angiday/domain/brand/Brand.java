@@ -1,5 +1,9 @@
 package com.bqtankiet.angiday.domain.brand;
 
+/**
+ * POJO Brand model
+ * @author bqtankiet
+ */
 public class Brand {
 
     private String id;

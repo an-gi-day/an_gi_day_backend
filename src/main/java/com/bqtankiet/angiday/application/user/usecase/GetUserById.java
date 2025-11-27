@@ -7,6 +7,9 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author bqtankiet
+ */
 @Service
 public class GetUserById implements UseCase<GetUserById.Input, GetUserById.Output> {
 

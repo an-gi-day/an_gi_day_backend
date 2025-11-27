@@ -8,6 +8,9 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * @author bqtankiet
+ */
 @Profile({"h2", "dev"})
 @Configuration
 public class DevSecurityConfig {

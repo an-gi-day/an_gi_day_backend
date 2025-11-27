@@ -1,5 +1,9 @@
 package com.bqtankiet.angiday.domain.category;
 
+/**
+ * POJO Category model
+ * @author bqtankiet
+ */
 public class Category {
 
     private String id;

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author bqtankiet
+ */
 @Service
 public class GetAllBrand implements UseCase<GetAllBrand.Input, GetAllBrand.Output> {
 

@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author bqtankiet
+ */
 @RequestMapping("/api/v1/categories")
 @RestController
 public class CategoryController {

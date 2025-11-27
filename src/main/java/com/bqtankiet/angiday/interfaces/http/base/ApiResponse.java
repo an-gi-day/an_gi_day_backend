@@ -8,6 +8,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author bqtankiet
+ */
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)

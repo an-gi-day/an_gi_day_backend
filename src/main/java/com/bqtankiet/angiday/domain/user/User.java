@@ -2,6 +2,10 @@ package com.bqtankiet.angiday.domain.user;
 
 import java.util.Objects;
 
+/**
+ * POJO User model
+ * @author bqtankiet
+ */
 public class User {
     private Long id;
     private String name;
