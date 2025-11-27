@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.category;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.category;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "categories")
-public class CategoryEntity {
+public class CategoryJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,5 +17,4 @@ public class CategoryEntity {
 
     private String imageUrl;
 }
-
 

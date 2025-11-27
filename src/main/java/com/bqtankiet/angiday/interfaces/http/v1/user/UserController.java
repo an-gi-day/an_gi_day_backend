@@ -33,7 +33,7 @@ public class UserController {
         GetAllUser.Output output = getAllUser
                 .with(GetAllUser.MaskFlag.MASK_EMAIL_PHONE)
                 .call();
-        List<UserResponseDto> dtoList = userMapper.toDtoList(output);
+        List<UserResponseDto> dtoList = output.users().stream().map(userMapper::modelToDto).toList();
         ApiResponse<List<UserResponseDto>> apiResponse = ApiResponse.success(dtoList);
         apiResponse.setMetadata(Map.of("size", dtoList.size()));
         return ResponseEntity.ok(apiResponse);

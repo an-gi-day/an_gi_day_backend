@@ -17,10 +17,10 @@ import java.util.Map;
 @RestController
 public class CategoryController {
     private final GetAllCategory getAllCategory;
-    private final CategoryMapper categoryMapper;
+    private final CategoryResponseMapper categoryMapper;
 
     @Autowired
-    public CategoryController(GetAllCategory getAllCategory, CategoryMapper categoryMapper) {
+    public CategoryController(GetAllCategory getAllCategory, CategoryResponseMapper categoryMapper) {
         this.getAllCategory = getAllCategory;
         this.categoryMapper = categoryMapper;
     }

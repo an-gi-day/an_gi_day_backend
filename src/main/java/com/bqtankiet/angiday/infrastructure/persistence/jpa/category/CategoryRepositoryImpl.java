@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.category;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.category;
 
 import com.bqtankiet.angiday.domain.category.model.Category;
 import com.bqtankiet.angiday.domain.category.repository.ICategoryRepository;
@@ -10,11 +10,11 @@ import java.util.stream.Collectors;
 
 @Repository
 public class CategoryRepositoryImpl implements ICategoryRepository {
-    private final CategoryRepositoryJpa repositoryJpa;
-    private final CategoryEntityMapper mapper;
+    private final CategoryJpaRepository repositoryJpa;
+    private final CategoryJpaMapper mapper;
 
     @Autowired
-    public CategoryRepositoryImpl(CategoryRepositoryJpa repositoryJpa, CategoryEntityMapper categoryMapper) {
+    public CategoryRepositoryImpl(CategoryJpaRepository repositoryJpa, CategoryJpaMapper categoryMapper) {
         this.repositoryJpa = repositoryJpa;
         this.mapper = categoryMapper;
     }
@@ -23,7 +23,7 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
     public List<Category> findAll() {
         return repositoryJpa.findAll()
                 .stream()
-                .map(mapper::entityToModel)
+                .map(mapper::dtoToModel)
                 .collect(Collectors.toList());
     }
 }

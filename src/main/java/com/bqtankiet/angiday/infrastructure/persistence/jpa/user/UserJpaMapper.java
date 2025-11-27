@@ -1,9 +1,9 @@
-package com.bqtankiet.angiday.interfaces.http.v1.user;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.user;
 
 import com.bqtankiet.angiday.domain.user.model.User;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.base.JpaMapper;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface UserMapper extends JpaMapper<User, UserResponseDto> {
+public interface UserJpaMapper extends JpaMapper<User, UserJpaEntity> {
 }

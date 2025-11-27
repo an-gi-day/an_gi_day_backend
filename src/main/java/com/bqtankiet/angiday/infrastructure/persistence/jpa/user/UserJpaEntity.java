@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.user;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "users")
-public class UserEntity {
+public class UserJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

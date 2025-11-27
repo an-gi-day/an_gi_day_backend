@@ -1,44 +1,43 @@
-package com.bqtankiet.angiday.infrastructure.persistence.user;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.user;
 
 import com.bqtankiet.angiday.domain.user.model.User;
 import com.bqtankiet.angiday.domain.user.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.bqtankiet.angiday.infrastructure.persistence.user.UserMapper.domainToEntity;
-import static com.bqtankiet.angiday.infrastructure.persistence.user.UserMapper.entityToDomain;
-
-@Service
+@Repository
 public class UserRepositoryImpl implements IUserRepository {
-    private final UserRepositoryJpa userRepositoryJpa;
+    private final UserJpaRepository userRepositoryJpa;
+    private final UserJpaMapper userJpaMapper;
 
     @Autowired
-    public UserRepositoryImpl(UserRepositoryJpa userRepositoryJpa) {
+    public UserRepositoryImpl(UserJpaRepository userRepositoryJpa, UserJpaMapper userJpaMapper) {
         this.userRepositoryJpa = userRepositoryJpa;
+        this.userJpaMapper = userJpaMapper;
     }
 
     @Override
     public Optional<User> findById(Long id) {
-        return userRepositoryJpa.findById(id).map(UserMapper::entityToDomain);
+        return userRepositoryJpa.findById(id).map(userJpaMapper::dtoToModel);
     }
 
     @Override
     public Optional<User> findByName(String name) {
-        return userRepositoryJpa.findByName(name).map(UserMapper::entityToDomain);
+        return userRepositoryJpa.findByName(name).map(userJpaMapper::dtoToModel);
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
-        return userRepositoryJpa.findByEmail(email).map(UserMapper::entityToDomain);
+        return userRepositoryJpa.findByEmail(email).map(userJpaMapper::dtoToModel);
     }
 
     @Override
     public Optional<User> findByPhone(String phone) {
-        return userRepositoryJpa.findByPhone(phone).map(UserMapper::entityToDomain);
+        return userRepositoryJpa.findByPhone(phone).map(userJpaMapper::dtoToModel);
     }
 
     @Override
@@ -55,7 +54,7 @@ public class UserRepositoryImpl implements IUserRepository {
     public List<User> findAll() {
         return userRepositoryJpa.findAll()
                 .stream()
-                .map(UserMapper::entityToDomain)
+                .map(userJpaMapper::dtoToModel)
                 .collect(Collectors.toList());
     }
 
