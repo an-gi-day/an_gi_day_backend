@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author bqtankiet
+ */
 @RestController
 @RequestMapping("/api/v1/foods")
 public class FoodController {
