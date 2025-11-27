@@ -24,8 +24,9 @@ This is the backend repository for the **An Gi Day** Flutter App
 ---
 
 ## Installation Guides
-I have written the installation guide inside the folder `/docs`. You can view it here: [Backend_Installation_Guides.md
-](https://github.com/an-gi-day/an_gi_day_backend/blob/main/docs/Backend_Installation_Guides.md)
+I have written the installation guide inside the folder `/docs`  
+You can view it here: [Backend_Installation_Guides.md](https://github.com/an-gi-day/an_gi_day_backend/blob/main/docs/Backend_Installation_Guides.md)
 
 ## Postman Documentation
-I have also published the Postman documentation at https://documenter.getpostman.com/view/43499672/2sB3dK1YSC
+I have also published the Postman documentation  
+You can view it here: https://documenter.getpostman.com/view/43499672/2sB3dK1YSC
