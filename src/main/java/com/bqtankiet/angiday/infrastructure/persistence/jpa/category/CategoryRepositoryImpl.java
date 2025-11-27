@@ -1,7 +1,7 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa.category;
 
-import com.bqtankiet.angiday.domain.category.model.Category;
-import com.bqtankiet.angiday.domain.category.repository.ICategoryRepository;
+import com.bqtankiet.angiday.domain.category.Category;
+import com.bqtankiet.angiday.domain.category.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

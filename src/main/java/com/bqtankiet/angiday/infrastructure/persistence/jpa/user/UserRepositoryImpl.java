@@ -1,7 +1,7 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa.user;
 
-import com.bqtankiet.angiday.domain.user.model.User;
-import com.bqtankiet.angiday.domain.user.repository.IUserRepository;
+import com.bqtankiet.angiday.domain.user.User;
+import com.bqtankiet.angiday.domain.user.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.domain.category.model;
+package com.bqtankiet.angiday.domain.category;
 
 public class Category {
 

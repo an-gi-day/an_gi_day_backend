@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.domain.user.model;
+package com.bqtankiet.angiday.domain.user;
 
 import java.util.Objects;
 

@@ -1,8 +1,8 @@
 package com.bqtankiet.angiday.application.user.usecase;
 
 import com.bqtankiet.angiday.application.base.UseCase;
-import com.bqtankiet.angiday.domain.user.model.User;
-import com.bqtankiet.angiday.domain.user.repository.IUserRepository;
+import com.bqtankiet.angiday.domain.user.User;
+import com.bqtankiet.angiday.domain.user.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

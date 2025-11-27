@@ -1,6 +1,4 @@
-package com.bqtankiet.angiday.domain.user.repository;
-
-import com.bqtankiet.angiday.domain.user.model.User;
+package com.bqtankiet.angiday.domain.user;
 
 import java.util.List;
 import java.util.Optional;
