@@ -35,6 +35,7 @@ public class BrandController {
                 .map(brandResponseMapper::modelToDto)
                 .toList();
         ApiResponse<?> resp = ApiResponse.success(dto);
+        resp.addMetadata("size", dto.size());
         return ResponseEntity.ok(resp);
     }
 
