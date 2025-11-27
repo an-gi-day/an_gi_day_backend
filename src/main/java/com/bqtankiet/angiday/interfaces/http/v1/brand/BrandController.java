@@ -44,7 +44,8 @@ public class BrandController {
         var rs = getBrandById
                 .withId(String.valueOf(id))
                 .call();
-        ApiResponse<?> resp = ApiResponse.success(rs);
+        var dto = brandResponseMapper.modelToDto(rs.brand());
+        ApiResponse<?> resp = ApiResponse.success(dto);
         return ResponseEntity.ok(resp);
     }
 
