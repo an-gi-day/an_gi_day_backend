@@ -1,7 +1,8 @@
 package com.bqtankiet.angiday.application.user.usecase;
 
-import com.bqtankiet.angiday.application.base.UseCase;
-import com.bqtankiet.angiday.domain.user.User;
+import com.bqtankiet.angiday.application.base.DefaultUseCase;
+import com.bqtankiet.angiday.application.user.dto.UserMapper;
+import com.bqtankiet.angiday.application.user.dto.UserOutput;
 import com.bqtankiet.angiday.domain.user.IUserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,38 +12,25 @@ import org.springframework.stereotype.Service;
  * @author bqtankiet
  */
 @Service
-public class GetUserById implements UseCase<GetUserById.Input, GetUserById.Output> {
+public class GetUserById implements DefaultUseCase<String, UserOutput> {
 
     private final IUserRepository userRepository;
-    private Long id;
+    private final UserMapper userMapper;
 
     @Autowired
-    public GetUserById(IUserRepository userRepository) {
+    public GetUserById(IUserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
+
     @Override
-    public Output call() {
+    public UserOutput call(String id) {
         var result = userRepository.findById(id);
         if (result.isPresent()) {
-            return new Output(result.get());
+            return userMapper.toDto(result.get());
         } else {
             throw new EntityNotFoundException("User not found with id: " + id);
         }
     }
-
-    @Override
-    public GetUserById with(Input input) {
-        id = input.id;
-        return this;
-    }
-
-    public GetUserById withId(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    public record Input(Long id) implements InputModel{}
-    public record Output(User user)  implements OutputModel{}
-
 }

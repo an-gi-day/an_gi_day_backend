@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.application.food.usecase;
 
-import com.bqtankiet.angiday.application.base.UseCase;
+import com.bqtankiet.angiday.application.base.NoInputUseCase;
 import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.domain.food.IFoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
  * @author bqtankiet
  */
 @Service
-public class GetAllFood implements UseCase<GetAllFood.Input, GetAllFood.Output> {
+public class GetAllFood implements NoInputUseCase<List<Food>> {
 
     private final IFoodRepository foodRepository;
 
@@ -22,16 +22,8 @@ public class GetAllFood implements UseCase<GetAllFood.Input, GetAllFood.Output> 
     }
 
     @Override
-    public Output call() {
+    public List<Food> call() {
         var rs = foodRepository.findAll();
-        return new Output(rs);
+        return rs;
     }
-
-    @Override
-    public GetAllFood with(Input input) {
-        return this;
-    }
-
-    public record Input() implements InputModel {}
-    public record Output(List<Food> foods) implements OutputModel {}
 }

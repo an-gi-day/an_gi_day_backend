@@ -1,8 +1,10 @@
 package com.bqtankiet.angiday.application.user.usecase;
 
-import com.bqtankiet.angiday.application.base.UseCase;
-import com.bqtankiet.angiday.domain.user.User;
+import com.bqtankiet.angiday.application.base.NoInputUseCase;
+import com.bqtankiet.angiday.application.user.dto.UserMapper;
+import com.bqtankiet.angiday.application.user.dto.UserOutput;
 import com.bqtankiet.angiday.domain.user.IUserRepository;
+import com.bqtankiet.angiday.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,42 +14,20 @@ import java.util.List;
  * @author bqtankiet
  */
 @Service
-public class GetAllUser implements UseCase<GetAllUser.MaskFlag, GetAllUser.Output> {
+public class GetAllUser implements NoInputUseCase<List<UserOutput>> {
 
     private final IUserRepository userRepository;
-    private MaskFlag flag;
+    private final UserMapper userMapper;
 
     @Autowired
-    public GetAllUser(IUserRepository userRepository) {
+    public GetAllUser(IUserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
     @Override
-    public Output call() {
+    public List<UserOutput> call() {
         List<User> users = userRepository.findAll();
-        if (flag == MaskFlag.SHOW_ALL) {
-            return new Output(users);
-        }
-        if (flag == MaskFlag.MASK_EMAIL_PHONE) {
-            users.forEach(u -> {
-                u.setEmail(u.getMaskedEmail());
-                u.setPhone(u.getMaskedPhone());
-            });
-            return new Output(users);
-        }
-        return new Output(userRepository.findAll());
-    }
-
-    @Override
-    public GetAllUser with(MaskFlag flag) {
-        this.flag = flag;
-        return this;
-    }
-
-    public record Output(List<User> users) implements OutputModel{}
-
-    public enum MaskFlag implements InputModel {
-        MASK_EMAIL_PHONE,
-        SHOW_ALL
+        return users.stream().map(userMapper::toDto).toList();
     }
 }
