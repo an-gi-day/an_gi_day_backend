@@ -19,7 +19,7 @@ cd an_gi_day_backend
 1. Access the H2 database at: http://127.0.0.1:8080/h2-console
 2. The username is `h2` and the password is empty by default
 3. Click `Connect`
-![h2-database-image](./resources/h2-image.png)
+<img width=400px src="./resources/h2-image.png"/>
 > **Note**: The initial database schema is located at `/src/main/resources/data.sql`
 
 ## 2 API Document
@@ -31,7 +31,7 @@ I have published a Postman documentation. You can view it here: https://document
 3. Switch the language to `Dart - http` (for integrating APIs with the AnGiDay Flutter App)
 4. In the API folders on the left sidebar, find and open the API folder you want.
 5. Then you can see all the endpoints inside it and click on it to see the example and description.
-![postman-image](./resources/postman-image.png)
+<img width=400px src="./resources/postman-image.png"/>
 
 ### How to run in Postman
 #### Postman Web
@@ -39,11 +39,11 @@ I have published a Postman documentation. You can view it here: https://document
 2. Choose Run in `Postman for Web`
 3. Then choose a workspace to import into (if you don't have, create it first)
 4. Postman will notify you if the import is successful.
-![import-success](./resources/postman-import-success.png)
+<img width=300px src="./resources/postman-import-success.png"/>
 
 #### Postman Local
 1. Open Postman application
 2. Create new Workspace named
 3. Select `From Git Repository`
-![Create Postman Workspace](./resources/postman-create-workspace.png)
-4. Press `Next` and choose the repo folder you have cloned 
+<img width=400px src="./resources/postman-create-workspace.png"/>
+5. Press `Next` and choose the repo folder you have cloned 
