@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: AnGiDay
+
+  profiles:
+    active: h2

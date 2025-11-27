@@ -1,0 +1,613 @@
+{
+  "info": {
+    "_postman_id": "88c2e5a2-c446-4179-93d0-9528ce75df78",
+    "name": "AnGiDay",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "foods",
+      "item": [
+        {
+          "name": "/api/v1/foods",
+          "id": "644f7b59-1b8b-4089-bb92-75f29720a715",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/foods",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "foods"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "97825c83-418d-417d-8072-663603b7cb4a",
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/foods",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "foods"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 09:04:50 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Gà rán sốt cay\",\n            \"description\": \"Món gà rán cay ngon tuyệt vời, giòn rụm, đậm đà hương vị.\",\n            \"imageUrl\": \"https://media.loveitopcdn.com/24813/thumb/600x600/z4564243657819-f5b393659a568f6a0d4e329ac92bb3b4.jpg?zc=1\",\n            \"basePrice\": 59000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Gà rán\",\n                \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n            },\n            \"brand\": {\n                \"id\": 3,\n                \"name\": \"KFC\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Cơm gà sốt cay\",\n            \"description\": \"Cơm gà sốt cay thơm ngon, đậm đà, phù hợp khẩu vị mọi người.\",\n            \"imageUrl\": \"https://jollibee.com.vn/media/catalog/product/cache/11f3e6435b23ab624dc55c2d3fe9479d/g/_/g_s_t_cay_-_4-compressed.jpg\",\n            \"basePrice\": 65000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"Gà rán\",\n                \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n            },\n            \"brand\": {\n                \"id\": 4,\n                \"name\": \"Jollibee\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/W_DYClcNS6Jge8IZJIocA_fr6qkz7wbB_Xq92o8ACa-nYRl8ZzAiVenxqdPxu5aFb3Mb\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Bánh mì thập cẩm\",\n            \"description\": \"Bánh mì thập cẩm với nhiều loại nhân hấp dẫn, ngon miệng.\",\n            \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\",\n            \"basePrice\": 29000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Bánh mì\",\n                \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n            },\n            \"brand\": {\n                \"id\": 2,\n                \"name\": \"Bánh mì Huỳnh Hoa\",\n                \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Pizza bò Hàn Quốc\",\n            \"description\": \"Pizza bò Hàn Quốc với phô mai béo ngậy và thịt bò mềm mại.\",\n            \"imageUrl\": \"https://pizzahut.vn/_next/image?url=https%3A%2F%2Fcdn.pizzahut.vn%2Fimages%2FWeb_V3%2FProducts_MenuTool%2FBulgogi._20251029134256KCW.webp&w=1024&q=100\",\n            \"basePrice\": 120000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 6,\n                \"name\": \"Pizza\",\n                \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n            },\n            \"brand\": {\n                \"id\": 5,\n                \"name\": \"Pizza Hut\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Pizza phô mai\",\n            \"description\": \"Pizza phô mai thơm ngon, béo ngậy với lớp phô mai tan chảy hấp dẫn.\",\n            \"imageUrl\": \"https://pizzahut.vn/_next/image?url=https%3A%2F%2Fcdn.pizzahut.vn%2Fimages%2FWeb_V3%2FProducts_MenuTool%2FCheese%20Lover%20with%20honey._20250317172143IO1.webp&w=1170&q=75\",\n            \"basePrice\": 110000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 6,\n                \"name\": \"Pizza\",\n                \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n            },\n            \"brand\": {\n                \"id\": 5,\n                \"name\": \"Pizza Hut\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Bánh bao thịt\",\n            \"description\": \"Bánh bao thịt nóng hổi, nhân thịt thơm ngon, mềm mịn.\",\n            \"imageUrl\": \"https://noiphosaigon.vn/wp-content/uploads/2020/09/cach-lam-banh-bao-nhan-thit-thom-ngon.jpg\",\n            \"basePrice\": 25000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 7,\n                \"name\": \"Bento\",\n                \"imageUrl\": \"https://thumbs.dreamstime.com/b/japanese-bento-box-asian-style-lunch-sushi-rolls-salad-fresh-sea-food-top-view-nori-maki-meat-cooked-vegetables-rice-329549683.jpg\"\n            },\n            \"brand\": {\n                \"id\": 3,\n                \"name\": \"KFC\",\n                \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Bánh mì Huỳnh Hoa\",\n            \"description\": \"Bánh mì Huỳnh Hoa đặc sản nổi tiếng, giòn tan, đậm đà hương vị.\",\n            \"imageUrl\": \"https://banhmihuynhhoa.vn/wp-content/uploads/2024/10/dscf0711-min-1-300x300.jpg\",\n            \"basePrice\": 40000,\n            \"soldCount\": null,\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Bánh mì\",\n                \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n            },\n            \"brand\": {\n                \"id\": 2,\n                \"name\": \"Bánh mì Huỳnh Hoa\",\n                \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n            }\n        }\n    ],\n    \"timestamp\": \"2025-11-27T16:04:50.3617754\",\n    \"metadata\": {\n        \"size\": 7\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "id": "671f78fb-d7f4-459a-8137-d56fded8381f"
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "/api/v1/categories",
+          "id": "5ee6464b-18e9-43ae-bbf0-b546bd76231f",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/categories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4a79744d-e99e-457b-ac98-068c33b7c38a",
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/categories",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "categories"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 06:11:15 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Bánh mì\",\n            \"imageUrl\": \"https://cdn-media.hanoitimes.vn/2021/3/20/z2388286964567_365ff5742704671dadede255cf83f869.jpg\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Bánh bao\",\n            \"imageUrl\": \"https://thumbs.dreamstime.com/b/banh-bao-isolated-white-background-delicious-steamed-bun-filled-savory-ingredients-363408595.jpg\"\n        },\n        {\n            \"id\": \"3\",\n            \"name\": \"Gà rán\",\n            \"imageUrl\": \"https://homepage.momocdn.net/blogscontents/momo-upload-api-191223210217-637127317379959333.jpg\"\n        },\n        {\n            \"id\": \"4\",\n            \"name\": \"Nước ngọt\",\n            \"imageUrl\": \"https://nutifood.com.vn/files/nutritionhouse/NUTIFOOD-SSQ/PRODUCT/PACKSHOT/2-PACKSHOTS/packshot-fruit-610x610px-eng.png\"\n        },\n        {\n            \"id\": \"5\",\n            \"name\": \"Mì trộn\",\n            \"imageUrl\": \"https://nemluji.vn/wp-content/uploads/2025/02/Dia-mi-tron-thap-cam.jpg\"\n        },\n        {\n            \"id\": \"6\",\n            \"name\": \"Pizza\",\n            \"imageUrl\": \"https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800\"\n        },\n        {\n            \"id\": \"7\",\n            \"name\": \"Bento\",\n            \"imageUrl\": \"https://thumbs.dreamstime.com/b/japanese-bento-box-asian-style-lunch-sushi-rolls-salad-fresh-sea-food-top-view-nori-maki-meat-cooked-vegetables-rice-329549683.jpg\"\n        },\n        {\n            \"id\": \"8\",\n            \"name\": \"Ăn vặt\",\n            \"imageUrl\": \"https://nemnuonghungviet.com/nemhungviet/uploads/2024/11/an-vat-sai-gon-1.jpg\"\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:15.9178045\",\n    \"metadata\": {\n        \"size\": 8\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "id": "ab9252a3-829a-4bec-8945-a2de5fee7860"
+    },
+    {
+      "name": "brands",
+      "item": [
+        {
+          "name": "/api/v1/brands",
+          "id": "dd0454e5-c1b0-4f61-9145-d38134c837ae",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/brands",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "brands"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3251ea04-8de0-40ea-b25d-396ee5de6bb5",
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/brands",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "brands"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 06:11:25 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Highland\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/WthZu0rfWhv08r5CF24ideqmnAJiJ3oPn6-LEUObkLG82EB6lHHjWuGzVLQJ0NOVEtd9\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Bánh mì Huỳnh Hoa\",\n            \"imageUrl\": \"https://hestiafood.com.vn/wp-content/uploads/2022/10/Chat-voi-chung-toi-2.png\"\n        },\n        {\n            \"id\": \"3\",\n            \"name\": \"KFC\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/O3geEaphALVx3jeI70oudMvyNTDTVVLLAd1jXFuI-oUv4bE7wQn4IPn2Y1cW8rgMElM\"\n        },\n        {\n            \"id\": \"4\",\n            \"name\": \"Jollibee\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/W_DYClcNS6Jge8IZJIocA_fr6qkz7wbB_Xq92o8ACa-nYRl8ZzAiVenxqdPxu5aFb3Mb\"\n        },\n        {\n            \"id\": \"5\",\n            \"name\": \"Pizza Hut\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw\"\n        },\n        {\n            \"id\": \"6\",\n            \"name\": \"McDonald's\",\n            \"imageUrl\": \"https://loop.com.vn/storage/logo-m-01.jpg\"\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:25.8997123\",\n    \"metadata\": {\n        \"size\": 6\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "/api/v1/brands/{id}",
+          "id": "cddee4cc-fdd5-4920-b47a-6b755a35f3e2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/brands/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "brands",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "00fd02db-8a89-4e1e-96ab-7d75341173dc",
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/brands/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "brands",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 06:00:41 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"brand\": {\n            \"id\": \"1\",\n            \"name\": \"Highland\",\n            \"imageUrl\": \"https://play-lh.googleusercontent.com/WthZu0rfWhv08r5CF24ideqmnAJiJ3oPn6-LEUObkLG82EB6lHHjWuGzVLQJ0NOVEtd9\"\n        }\n    },\n    \"timestamp\": \"2025-11-27T13:00:41.5443974\"\n}"
+            }
+          ]
+        }
+      ],
+      "id": "ec4a26ed-9043-4221-9cb4-2b0e0b2fa1b4"
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "/api/v1/users",
+          "id": "f7f20e99-ae90-4fa2-97e4-8deb4e0fad53",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a8c32ffe-0434-4946-aedf-cf1d29f65936",
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/users",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 06:11:38 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Admin\",\n            \"email\": \"ad*****@example.com\",\n            \"phone\": \"012*****789\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Developer\",\n            \"email\": \"de*****@example.com\",\n            \"phone\": \"012*****987\"\n        }\n    ],\n    \"timestamp\": \"2025-11-27T13:11:38.7776892\",\n    \"metadata\": {\n        \"size\": 2\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "/api/v1/users/{id}",
+          "id": "9df6f5dd-bd2a-4647-b925-cae50422209f",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3fe24de8-98f9-4355-a371-5547fd8b7986",
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/users/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 06:01:13 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 200,\n    \"success\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"id\": \"1\",\n        \"name\": \"Admin\",\n        \"email\": \"admin@example.com\",\n        \"phone\": \"0123456789\"\n    },\n    \"timestamp\": \"2025-11-27T13:01:13.8854588\"\n}"
+            },
+            {
+              "id": "2c5a00dd-346f-461d-ac24-5fcbbfca4288",
+              "name": "not-found",
+              "originalRequest": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/v1/users/999",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "999"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "Text",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Expires",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 27 Nov 2025 06:19:56 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "body": "{\n    \"code\": 404,\n    \"success\": false,\n    \"message\": \"User not found with id: 999\",\n    \"errors\": [\n        \"Error caused by EntityNotFoundException\"\n    ],\n    \"timestamp\": \"2025-11-27T13:19:56.5898163\"\n}"
+            }
+          ]
+        }
+      ],
+      "id": "1e34648a-7d46-489c-8961-a99862dd7b9d"
+    }
+  ]
+}
