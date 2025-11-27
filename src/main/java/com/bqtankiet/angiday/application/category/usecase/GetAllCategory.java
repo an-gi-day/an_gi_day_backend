@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.application.category.usecase;
 
-import com.bqtankiet.angiday.application.base.UseCase;
+import com.bqtankiet.angiday.application.base.NoInputUseCase;
 import com.bqtankiet.angiday.domain.category.Category;
 import com.bqtankiet.angiday.domain.category.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
  * @author bqtankiet
  */
 @Service
-public class GetAllCategory implements UseCase<GetAllCategory.Input, GetAllCategory.Output> {
+public class GetAllCategory implements NoInputUseCase<List<Category>> {
 
     private final ICategoryRepository repository;
 
@@ -22,15 +22,7 @@ public class GetAllCategory implements UseCase<GetAllCategory.Input, GetAllCateg
     }
 
     @Override
-    public Output call() {
-        return new Output(repository.findAll());
+    public List<Category> call() {
+        return repository.findAll();
     }
-
-    @Override
-    public GetAllCategory with(Input input) {
-        return this;
-    }
-
-    public record Input() implements InputModel {}
-    public record Output(List<Category> categories) implements OutputModel {}
 }

@@ -29,15 +29,12 @@ public class CategoryController {
 
     @GetMapping()
     public ResponseEntity<?> category() {
-            List<Category> categories = getAllCategory
-                    .with(null)
-                    .call()
-                    .categories();
-            List<CategoryResponseDto> dtoList = categories.stream()
+            var rs = getAllCategory.call();
+            var dto = rs.stream()
                     .map(categoryMapper::modelToDto)
                     .toList();
-            ApiResponse<List<CategoryResponseDto>> apiResponse = ApiResponse.success(dtoList);
-            apiResponse.addMetadata("size", categories.size());
+            ApiResponse<?> apiResponse = ApiResponse.success(dto);
+            apiResponse.addMetadata("size", dto.size());
             return ResponseEntity.ok(apiResponse);
     }
 }

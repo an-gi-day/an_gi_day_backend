@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author bqtankiet
@@ -33,21 +32,17 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<?> getAllUsers() {
-        GetAllUser.Output output = getAllUser
-                .with(GetAllUser.MaskFlag.MASK_EMAIL_PHONE)
-                .call();
-        List<UserResponseDto> dtoList = output.users().stream().map(userMapper::modelToDto).toList();
-        ApiResponse<List<UserResponseDto>> apiResponse = ApiResponse.success(dtoList);
-        apiResponse.addMetadata("size", dtoList.size());
+        var rs = getAllUser.call();
+        var dto = rs.stream().map(userMapper::modelToDto).toList();
+        ApiResponse<List<UserResponseDto>> apiResponse = ApiResponse.success(dto);
+        apiResponse.addMetadata("size", dto.size());
         return ResponseEntity.ok(apiResponse);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
-        GetUserById.Output out = getUserById
-                .withId(id)
-                .call();
-        UserResponseDto dto = userMapper.modelToDto(out.user());
+        var rs = getUserById.call(String.valueOf(id));
+        var dto = userMapper.modelToDto(rs);
         ApiResponse<?> apiResponse = ApiResponse.success(dto);
         return ResponseEntity.ok(apiResponse);
     }

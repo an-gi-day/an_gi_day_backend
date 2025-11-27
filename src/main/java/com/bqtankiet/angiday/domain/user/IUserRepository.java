@@ -8,7 +8,7 @@ import java.util.Optional;
  */
 public interface IUserRepository {
 
-    Optional<User> findById(Long id);
+    Optional<User> findById(String id);
     Optional<User> findByName(String name);
     Optional<User> findByEmail(String email);
     Optional<User> findByPhone(String phone);

@@ -24,8 +24,8 @@ public class UserRepositoryImpl implements IUserRepository {
     }
 
     @Override
-    public Optional<User> findById(Long id) {
-        return userRepositoryJpa.findById(id).map(userJpaMapper::dtoToModel);
+    public Optional<User> findById(String id) {
+        return userRepositoryJpa.findById(Long.parseLong(id)).map(userJpaMapper::dtoToModel);
     }
 
     @Override

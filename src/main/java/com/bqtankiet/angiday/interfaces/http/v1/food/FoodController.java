@@ -28,8 +28,7 @@ public class FoodController {
     @GetMapping()
     public ResponseEntity<?> getAllFood() {
         var rs = getAllFood.call();
-        var dto = rs.foods()
-                .stream()
+        var dto = rs.stream()
                 .map(foodJpaMapper::modelToDto)
                 .toList();
         var resp = ApiResponse.success(dto);
