@@ -20,7 +20,8 @@ cd an_gi_day_backend
 2. The username is `h2` and the password is empty by default
 3. Click `Connect`
 <img width=400px src="./resources/h2-image.png"/>
-> **Note**: The initial database schema is located at `/src/main/resources/data.sql`
+
+>**Note**: The initial database schema is located at <a href="https://github.com/an-gi-day/an_gi_day_backend/blob/main/src/main/resources/data.sql">`/src/main/resources/data.sql`</a>
 
 ## 2 API Document
 I have published a Postman documentation. You can view it here: https://documenter.getpostman.com/view/43499672/2sB3dK1YSC
