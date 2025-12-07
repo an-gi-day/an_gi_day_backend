@@ -19,6 +19,7 @@ public class FoodJpaEntity {
     private Long id;
 
     private String name;
+    private String nameNoAccent; //convert ve ten khong dau
     private String description;
     private String imageUrl;
     private Double basePrice;

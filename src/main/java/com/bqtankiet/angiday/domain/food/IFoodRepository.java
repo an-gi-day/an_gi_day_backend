@@ -14,4 +14,8 @@ public interface IFoodRepository {
 
     List<Food> findAllByCategoryId(String categoryId);
 
+    //    phong
+    List<Food> searchByKeyword(String keyword);
+
+
 }
