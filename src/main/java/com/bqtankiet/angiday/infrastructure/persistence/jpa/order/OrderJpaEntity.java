@@ -3,6 +3,7 @@ package com.bqtankiet.angiday.infrastructure.persistence.jpa.order;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.time.Instant;
 import java.util.List;
@@ -12,14 +13,18 @@ import java.util.List;
 @Setter
 @Table(name = "orders")
 public class OrderJpaEntity {
-    @Id
-    private String orderId;  // theo định dạng OyyyyMMddHHmmss
+    @Id()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @UniqueElements
+    private String code;  // theo định dạng OyyyyMMddHHmmss
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<OrderItemJpaEntity> items;
 
     @Embedded
-    private OrderPricingEmbed orderPricing;
+    private OrderPricingJpaEmbed orderPricing;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "payment_id")

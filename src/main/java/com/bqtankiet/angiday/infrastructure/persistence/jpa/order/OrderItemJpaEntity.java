@@ -27,9 +27,8 @@ public class OrderItemJpaEntity {
     private FoodJpaEntity food;
 
     @Embedded
-    private ItemPricingEmbed itemPricing;
+    private ItemPricingJpaEmbed itemPricing;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "order_item_id") // khóa ngoại trong bảng options
+    @OneToMany(mappedBy = "orderItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ItemOptionJpaEntity> options;
 }

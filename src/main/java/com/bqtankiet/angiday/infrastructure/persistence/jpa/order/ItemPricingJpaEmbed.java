@@ -7,13 +7,13 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class OrderPricingEmbed {
+public class ItemPricingJpaEmbed {
 
     private int amount;
 
-    private int shippingFee;
+    private int optionCost;
 
-    private int discount;
+    private int quantity;
 
-    private int total;
+    private int subtotal;
 }

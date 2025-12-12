@@ -20,3 +20,11 @@ spring:
   sql:
     init:
       mode: always
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        tool:
+          hbm2ddl: TRACE

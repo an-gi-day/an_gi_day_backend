@@ -14,14 +14,19 @@ public class ItemOptionJpaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "option_id", length = 64)
-    private String optionId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "food_option_id")
+    private FoodOptionJpaEntity foodOption;
+
+    @ManyToOne()
+    @JoinColumn(name = "order_item_id")
+    private OrderItemJpaEntity orderItem;
 
     @Column(length = 100)
     private String name;
 
     @Column(length = 100)
-    private String value;
+    private String option_value;
 
     private int cost;
 
