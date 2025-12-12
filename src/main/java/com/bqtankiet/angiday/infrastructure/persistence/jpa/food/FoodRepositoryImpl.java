@@ -5,8 +5,10 @@ import com.bqtankiet.angiday.domain.food.IFoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.text.Normalizer;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @author bqtankiet
@@ -40,4 +42,27 @@ public class FoodRepositoryImpl implements IFoodRepository {
     public List<Food> findAllByCategoryId(String categoryId) {
         return List.of();
     }
+
+    @Override
+    public List<Food> searchByKeyword(String keyword) {
+        String keywordNoAccent = removeAccent(keyword);
+        return foodJpaRepository.search(keywordNoAccent)
+                .stream()
+                .map(foodJpaMapper::dtoToModel)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * ham removeAccent dung de convert chu co dau ve chu khong dau
+     */
+    public static String removeAccent(String s) {
+        String nfdNormalizedString = Normalizer.normalize(s, Normalizer.Form.NFD);
+        return nfdNormalizedString.replaceAll("\\p{M}", "");
+    }
+/**
+ * sử dụng để set cột nameNoAccent trong bảng food nếu cần
+ *  food.setNameNoAccent(removeAccent(inputName).toLowerCase());
+ */
+
+
 }
