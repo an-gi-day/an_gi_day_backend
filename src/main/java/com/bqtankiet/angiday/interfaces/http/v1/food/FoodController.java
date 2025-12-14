@@ -7,6 +7,7 @@ import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.mapper.FoodJpaMapper;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,8 +60,9 @@ public class FoodController {
 
         // FAILED: Not found with id
         if (food == null) {
-            return ResponseEntity.ok(
-                    ApiResponse.error(404, "Not found with id: "+foodId));
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(ApiResponse.error(404, "Not found with id: "+foodId));
         }
 
         // SUCCESS

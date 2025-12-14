@@ -7,6 +7,7 @@ import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import com.bqtankiet.angiday.interfaces.http.v1.order.dto.CreateOrderRequest;
 import com.bqtankiet.angiday.interfaces.http.v1.order.mapper.CreateOrderResponseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,13 +50,13 @@ public class OrderController {
         String userId = getCurrentUserId.call();
 
         // FAILED: Chưa tạo order trước đó thì không thể place order -> báo lỗi
-        if(!createOrderUseCase.existDraft(userId)) {
-            return ResponseEntity.badRequest().body(
-                    ApiResponse.errorWithMessage(
+        if (!createOrderUseCase.existDraft(userId)) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(ApiResponse.errorWithMessage(
                             404,
                             "You must draft an order first!",
-                            "Not found draft order"
-                    ));
+                            "Not found draft order"));
         }
 
         // SUCCESS
@@ -72,9 +73,9 @@ public class OrderController {
 
         // FAILED: Ko tìm thấy draft order -> báo lỗi
         if (!createOrderUseCase.existDraft(userId)) {
-            return ResponseEntity.badRequest().body(
-                    ApiResponse.error(404, "Not found draft order")
-            );
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(ApiResponse.error(404, "Not found draft order"));
         }
 
         // SUCCESS
