@@ -59,3 +59,22 @@ VALUES (1, 'https://media.loveitopcdn.com/24813/thumb/600x600/z4564243657819-f5b
        (7, 'https://banhmihuynhhoa.vn/wp-content/uploads/2024/10/dscf0711-min-1-300x300.jpg',
         'Bánh mì Huỳnh Hoa', 'Banh mi Huynh Hoa', 40000.0,
         'Bánh mì Huỳnh Hoa đặc sản nổi tiếng, giòn tan, đậm đà hương vị.', 2, 1);
+
+
+
+INSERT INTO "FOOD_OPTIONS" ("ID", "NAME", "FOOD_ID") VALUES
+                                                         ('111', 'Lựa chọn ớt', 3),
+                                                         ('222', 'Lựa chọn patê', 3),
+                                                         ('333', 'Lựa chọn topping', 3);
+
+-- (2 lựa chọn cho mỗi Food Option)
+INSERT INTO "FOOD_OPTION_VALUES" ("ID", "COST", "OPTION_VALUE", "OPTION_ID") VALUES
+                                                                                 ('111-1', 0, 'Không ớt', '111'),
+                                                                                 ('111-2', 0, 'Có ớt', '111'),
+                                                                                 ('222-1', 0, 'Ít patê', '222'),
+                                                                                 ('222-2', 3000, 'Nhiều patê', '222'),
+                                                                                 ('333-1', 6000, '2 trứng', '333'),
+                                                                                 ('333-2', 10000, '3 trứng', '333');
+
+INSERT INTO "ADDRESSES" ("ID", "LATITUDE", "LONGITUDE", "LOCATION", "NAME", "PHONE", "USER_ID")
+VALUES (123, 10.871355874268529, 106.79179776930363, 'VQCR+GP6, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam', 'Trường Đại học Nông Lâm TP. Hồ Chí Minh', '012345678', '1');

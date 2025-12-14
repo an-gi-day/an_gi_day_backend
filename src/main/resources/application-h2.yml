@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update #create-drop, update, validate, none
     show-sql: true
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
@@ -20,3 +20,11 @@ spring:
   sql:
     init:
       mode: always
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        tool:
+          hbm2ddl: TRACE

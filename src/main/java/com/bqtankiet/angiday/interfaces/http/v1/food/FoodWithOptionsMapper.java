@@ -1,12 +1,9 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.food;
+package com.bqtankiet.angiday.interfaces.http.v1.food;
 
 import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.base.JpaMapper;
 import org.mapstruct.Mapper;
 
-/**
- * @author bqtankiet
- */
 @Mapper(componentModel = "spring")
-public interface FoodJpaMapper extends JpaMapper<Food, FoodJpaEntity> {
+public abstract class FoodWithOptionsMapper implements JpaMapper<Food, FoodWithOptionsDto> {
 }

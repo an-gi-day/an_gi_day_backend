@@ -1,10 +1,15 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.food;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.food.entity;
 
+import com.bqtankiet.angiday.domain.food.FoodOption;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.brand.BrandJpaEntity;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.category.CategoryJpaEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 /**
  * @author bqtankiet
@@ -12,6 +17,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "foods")
 public class FoodJpaEntity {
     @Id
@@ -24,14 +31,21 @@ public class FoodJpaEntity {
     private String imageUrl;
     private Double basePrice;
 
-    @Transient
     private Integer soldCount;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryJpaEntity category;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id")
     private BrandJpaEntity brand;
+
+    @OneToMany(
+            mappedBy = "food",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    private List<FoodOptionJpaEntity> options;
 }

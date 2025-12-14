@@ -1,7 +1,8 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.food;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.food.repository;
 
-import com.bqtankiet.angiday.domain.food.Food;
-import com.bqtankiet.angiday.domain.food.IFoodRepository;
+import com.bqtankiet.angiday.domain.food.*;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.mapper.FoodJpaMapper;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.entity.FoodJpaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +28,9 @@ public class FoodRepositoryImpl implements IFoodRepository {
 
     @Override
     public Optional<Food> findById(String id) {
-        return Optional.empty();
+        FoodJpaEntity entity = foodJpaRepository.findById(Long.parseLong(id)).orElse(null);
+        Food food = foodJpaMapper.dtoToModel(entity);
+        return Optional.ofNullable(food);
     }
 
     @Override

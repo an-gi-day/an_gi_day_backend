@@ -16,6 +16,4 @@ public interface IFoodRepository {
 
     //    phong
     List<Food> searchByKeyword(String keyword);
-
-
 }
