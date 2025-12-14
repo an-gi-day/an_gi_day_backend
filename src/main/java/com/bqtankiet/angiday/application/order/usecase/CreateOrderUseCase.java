@@ -66,8 +66,8 @@ public class CreateOrderUseCase {
         return order;
     }
 
-    public Order createAndSave(String userId, CreateOrderRequest request){
-        Order order = createDraft(userId, request);
+    public Order acceptAndSave(String userId){
+        Order order = getDraftOrder(userId);
         order.setStatus("ACCEPTED");
         var savedOrder = saveOrderUseCase.call(order);
 

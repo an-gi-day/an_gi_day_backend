@@ -31,6 +31,10 @@ public class OrderController {
     @PostMapping("/draft-order")
     public ResponseEntity<?> draftOrder(@RequestBody CreateOrderRequest request) {
         String userId = getCurrentUserId.call();
+        // FAILED:
+        // TODO: Kiểm tra đầu vào
+
+        // SUCCESS
         Order order = createOrderUseCase.createDraft(userId, request);
         var respDto = createOrderResponseMapper.toResponse(order);
         var apiResponse = ApiResponse.success(respDto);
@@ -41,8 +45,10 @@ public class OrderController {
      * Tạo và đồng thời lưu order vào database.
      */
     @PostMapping("/place-order")
-    public ResponseEntity<?> placeOrder(@RequestBody CreateOrderRequest request) {
+    public ResponseEntity<?> placeOrder() {
         String userId = getCurrentUserId.call();
+
+        // FAILED: Chưa tạo order trước đó thì không thể place order -> báo lỗi
         if(!createOrderUseCase.existDraft(userId)) {
             return ResponseEntity.badRequest().body(
                     ApiResponse.errorWithMessage(
@@ -51,7 +57,9 @@ public class OrderController {
                             "Not found draft order"
                     ));
         }
-        Order order = createOrderUseCase.createAndSave(userId, request);
+
+        // SUCCESS
+        Order order = createOrderUseCase.acceptAndSave(userId);
         var respDto = createOrderResponseMapper.toResponse(order);
         var apiResponse = ApiResponse.success(respDto);
         apiResponse.setMessage("place order successfully");
@@ -61,11 +69,15 @@ public class OrderController {
     @GetMapping("/draft-order")
     public ResponseEntity<?> getDraftOrder() {
         String userId = getCurrentUserId.call();
+
+        // FAILED: Ko tìm thấy draft order -> báo lỗi
         if (!createOrderUseCase.existDraft(userId)) {
             return ResponseEntity.badRequest().body(
                     ApiResponse.error(404, "Not found draft order")
             );
         }
+
+        // SUCCESS
         Order order = createOrderUseCase.getDraftOrder(userId);
         var respDto = createOrderResponseMapper.toResponse(order);
         var apiResponse = ApiResponse.success(respDto);

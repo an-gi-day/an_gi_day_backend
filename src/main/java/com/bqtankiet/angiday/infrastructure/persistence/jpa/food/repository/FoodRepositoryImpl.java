@@ -30,7 +30,7 @@ public class FoodRepositoryImpl implements IFoodRepository {
     public Optional<Food> findById(String id) {
         FoodJpaEntity entity = foodJpaRepository.findById(Long.parseLong(id)).orElse(null);
         Food food = foodJpaMapper.dtoToModel(entity);
-        return Optional.of(food);
+        return Optional.ofNullable(food);
     }
 
     @Override
