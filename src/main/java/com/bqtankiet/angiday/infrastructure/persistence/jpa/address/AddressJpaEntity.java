@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.order;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.address;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,8 +10,8 @@ import lombok.Setter;
 @Setter
 public class AddressJpaEntity {
     @Id
-    @Column(name = "address_id", nullable = false, length = 64)
-    private String addressId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(length = 20)
     private String phone;
@@ -26,5 +26,5 @@ public class AddressJpaEntity {
     @Column(length = 255)
     private String name;
 
-    private boolean snapshot;
+    private String userId;
 }

@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.order;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.order.entity;
 
 import jakarta.persistence.Embeddable;
 import lombok.Getter;

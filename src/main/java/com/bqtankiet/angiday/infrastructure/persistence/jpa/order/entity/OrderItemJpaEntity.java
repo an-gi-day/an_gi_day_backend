@@ -1,10 +1,11 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.order;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.order.entity;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.FoodJpaEntity;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.entity.FoodJpaEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,10 +20,10 @@ public class OrderItemJpaEntity {
 
     // Quan hệ nhiều OrderItem thuộc về 1 Order
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id")
     private OrderJpaEntity order;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "food_id")
     private FoodJpaEntity food;
 
@@ -31,4 +32,5 @@ public class OrderItemJpaEntity {
 
     @OneToMany(mappedBy = "orderItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ItemOptionJpaEntity> options;
+
 }

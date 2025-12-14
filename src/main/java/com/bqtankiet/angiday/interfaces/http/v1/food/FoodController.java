@@ -2,7 +2,7 @@ package com.bqtankiet.angiday.interfaces.http.v1.food;
 
 import com.bqtankiet.angiday.application.food.usecase.GetAllFood;
 import com.bqtankiet.angiday.application.food.usecase.SearchUseCase;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.FoodJpaMapper;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.mapper.FoodJpaMapper;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author bqtankiet
@@ -26,7 +24,9 @@ public class FoodController {
     private final SearchUseCase searchUseCase;
 
     @Autowired
-    public FoodController(GetAllFood getAllFood, FoodJpaMapper foodJpaMapper, SearchUseCase searchUseCase) {
+    public FoodController(GetAllFood getAllFood,
+                          FoodJpaMapper foodJpaMapper,
+                          SearchUseCase searchUseCase) {
         this.getAllFood = getAllFood;
         this.foodJpaMapper = foodJpaMapper;
         this.searchUseCase = searchUseCase;
@@ -42,6 +42,7 @@ public class FoodController {
         resp.addMetadata("size", dto.size());
         return ResponseEntity.ok(resp);
     }
+
     @GetMapping("/search")
     public ResponseEntity<?> searchFood(@RequestParam String keyword) {
         var rs = searchUseCase.call(keyword);
@@ -53,7 +54,5 @@ public class FoodController {
         resp.addMetadata("size", dto.size());
         return ResponseEntity.ok(resp);
     }
-
-
 
 }

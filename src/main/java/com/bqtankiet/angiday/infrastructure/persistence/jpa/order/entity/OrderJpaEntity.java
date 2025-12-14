@@ -1,11 +1,12 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.order;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.order.entity;
 
+import com.bqtankiet.angiday.infrastructure.persistence.jpa.address.AddressJpaEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,7 @@ public class OrderJpaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @UniqueElements
+    @Column(unique = true)
     private String code;  // theo định dạng OyyyyMMddHHmmss
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
@@ -30,7 +31,7 @@ public class OrderJpaEntity {
     @JoinColumn(name = "payment_id")
     private PaymentJpaEntity payment;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private AddressJpaEntity address;
 
@@ -38,5 +39,17 @@ public class OrderJpaEntity {
 
     private String status;
 
+    private String userId;
+
     private Instant createdAt;
+
+    public boolean addItem(OrderItemJpaEntity orderItemJpaEntity) {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
+        orderItemJpaEntity.setOrder(this);
+        orderItemJpaEntity.getOptions().forEach(option -> {
+            option.setOrderItem(orderItemJpaEntity);});
+        return items.add(orderItemJpaEntity);
+    }
 }

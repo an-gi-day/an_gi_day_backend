@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.order;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa.order.entity;
 
 import com.bqtankiet.angiday.infrastructure.persistence.converter.JpaConverterJson;
 import jakarta.persistence.*;

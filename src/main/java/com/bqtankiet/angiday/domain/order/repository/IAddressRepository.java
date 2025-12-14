@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.domain.order.repository;
 
-import com.bqtankiet.angiday.domain.order.models.Address;
+import com.bqtankiet.angiday.domain.address.Address;
 
 import java.util.Optional;
 
