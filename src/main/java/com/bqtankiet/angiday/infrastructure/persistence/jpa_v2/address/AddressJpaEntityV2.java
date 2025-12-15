@@ -1,14 +1,14 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa.address;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "addresses")
+@Table(name = "addresses_v2")
 @Getter
 @Setter
-public class AddressJpaEntity {
+public class AddressJpaEntityV2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
