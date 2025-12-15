@@ -10,18 +10,18 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "food_options_v2")
-public class FoodOptionJpaEntity {
+public class FoodOptionJpaEntityV2 {
     @Id
     private String id;
 
     private String name;
 
     @OneToMany(mappedBy = "option", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FoodOptionValueJpaEntity> optionValues;
+    private List<FoodOptionValueJpaEntityV2> optionValues;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_id")
-    private FoodJpaEntity food;
+    private FoodJpaEntityV2 food;
 
     //TODO: có thể thêm loại option (select, multi-select, input,...)
 }

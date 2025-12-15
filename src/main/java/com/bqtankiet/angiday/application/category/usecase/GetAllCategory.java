@@ -4,6 +4,7 @@ import com.bqtankiet.angiday.application.base.NoInputUseCase;
 import com.bqtankiet.angiday.domain.category.Category;
 import com.bqtankiet.angiday.domain.category.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,9 @@ public class GetAllCategory implements NoInputUseCase<List<Category>> {
     private final ICategoryRepository repository;
 
     @Autowired
-    public GetAllCategory(ICategoryRepository repository) {
+    public GetAllCategory(
+            @Qualifier("CategoryRepositoryImpl")
+            ICategoryRepository repository) {
         this.repository = repository;
     }
 

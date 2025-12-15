@@ -5,6 +5,7 @@ import com.bqtankiet.angiday.domain.brand.Brand;
 import com.bqtankiet.angiday.domain.brand.IBrandRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +17,9 @@ public class GetBrandById implements DefaultUseCase<String, Brand> {
     private final IBrandRepository brandRepository;
 
     @Autowired
-    public GetBrandById(IBrandRepository brandRepository) {
+    public GetBrandById(
+            @Qualifier("BrandRepositoryImpl")
+            IBrandRepository brandRepository) {
         this.brandRepository = brandRepository;
     }
 

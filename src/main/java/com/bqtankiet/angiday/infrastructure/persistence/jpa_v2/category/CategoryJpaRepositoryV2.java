@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
  * @author bqtankiet
  */
 @Repository
-public interface CategoryJpaRepository extends JpaRepository<CategoryJpaEntity,Long> {
+public interface CategoryJpaRepositoryV2 extends JpaRepository<CategoryJpaEntityV2,Long> {
 }

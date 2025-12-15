@@ -1,7 +1,7 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity;
 
 import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.BrandJpaEntityV2;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category.CategoryJpaEntity;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category.CategoryJpaEntityV2;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "foods_v2")
-public class FoodJpaEntity {
+public class FoodJpaEntityV2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,7 +34,7 @@ public class FoodJpaEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private CategoryJpaEntity category;
+    private CategoryJpaEntityV2 category;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id")
@@ -46,5 +46,5 @@ public class FoodJpaEntity {
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-    private List<FoodOptionJpaEntity> options;
+    private List<FoodOptionJpaEntityV2> options;
 }

@@ -1,6 +1,5 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity.FoodOptionJpaEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +8,7 @@ import lombok.Setter;
 @Table(name = "food_option_values_v2")
 @Getter
 @Setter
-public class FoodOptionValueJpaEntity {
+public class FoodOptionValueJpaEntityV2 {
     @Id
     private String id;
 
@@ -19,5 +18,5 @@ public class FoodOptionValueJpaEntity {
 
     @ManyToOne
     @JoinColumn(name = "option_id")
-    private FoodOptionJpaEntity option;
+    private FoodOptionJpaEntityV2 option;
 }

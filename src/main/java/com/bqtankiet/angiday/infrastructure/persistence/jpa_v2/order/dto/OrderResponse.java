@@ -1,7 +1,7 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.dto;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderStatus;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.Pricing;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderStatusV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.PricingV2;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +12,8 @@ import java.util.List;
 @Setter
 public class OrderResponse {
     private Long id;
-    private OrderStatus status;
-    private Pricing pricing;
+    private OrderStatusV2 status;
+    private PricingV2 pricing;
     private List<OrderItemResponse> items;
     private OrderPaymentResponse payment;
     private OrderAddressResponse address;

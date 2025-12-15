@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "categories_v2")
-public class CategoryJpaEntity {
+public class CategoryJpaEntityV2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

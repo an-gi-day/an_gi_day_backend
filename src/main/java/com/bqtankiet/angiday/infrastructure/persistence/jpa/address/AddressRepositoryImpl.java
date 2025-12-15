@@ -4,13 +4,14 @@ import com.bqtankiet.angiday.domain.address.Address;
 import com.bqtankiet.angiday.domain.address.IAddressRepository;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.repository.FoodJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Repository
+@Repository("AddressRepositoryImpl")
 public class AddressRepositoryImpl implements IAddressRepository {
 
     private final AddressJpaRepository addressJpaRepository;

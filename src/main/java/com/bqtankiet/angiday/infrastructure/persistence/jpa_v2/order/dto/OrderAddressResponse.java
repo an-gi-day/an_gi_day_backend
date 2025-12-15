@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.dto;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.GeoLocation;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.GeoLocationV2;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +11,5 @@ public class OrderAddressResponse {
     private String name;
     private String phone;
     private String location;
-    private GeoLocation coordinates;
+    private GeoLocationV2 coordinates;
 }

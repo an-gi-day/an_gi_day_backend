@@ -1,11 +1,11 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.dto;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderStatus;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderStatusV2;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class UpdateOrderStatusRequest {
-    private OrderStatus status;
+    private OrderStatusV2 status;
 }

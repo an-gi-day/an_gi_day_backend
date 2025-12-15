@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
  * @author bqtankiet
  */
 @Repository
-public class CategoryRepositoryImpl implements ICategoryRepository {
-    private final CategoryJpaRepository repositoryJpa;
-    private final CategoryJpaMapper mapper;
+public class CategoryJpaRepositoryImplV2 implements ICategoryRepository {
+    private final CategoryJpaRepositoryV2 repositoryJpa;
+    private final CategoryJpaMapperV2 mapper;
 
     @Autowired
-    public CategoryRepositoryImpl(CategoryJpaRepository repositoryJpa, CategoryJpaMapper categoryMapper) {
+    public CategoryJpaRepositoryImplV2(CategoryJpaRepositoryV2 repositoryJpa, CategoryJpaMapperV2 categoryMapper) {
         this.repositoryJpa = repositoryJpa;
         this.mapper = categoryMapper;
     }

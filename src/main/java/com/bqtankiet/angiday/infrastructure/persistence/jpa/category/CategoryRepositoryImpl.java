@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * @author bqtankiet
  */
-@Repository
+@Repository("CategoryRepositoryImpl")
 public class CategoryRepositoryImpl implements ICategoryRepository {
     private final CategoryJpaRepository repositoryJpa;
     private final CategoryJpaMapper mapper;

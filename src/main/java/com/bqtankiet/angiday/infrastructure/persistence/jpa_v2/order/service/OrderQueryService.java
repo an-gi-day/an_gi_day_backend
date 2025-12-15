@@ -1,8 +1,8 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.service;
 
 import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.dto.OrderResponse;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.mapper.OrderMapper;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.repository.OrderRepository;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.mapper.OrderMapperV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.repository.OrderRepositoryV2;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -10,10 +10,10 @@ import java.util.NoSuchElementException;
 @Service
 public class OrderQueryService {
 
-    private final OrderRepository orderRepository;
-    private final OrderMapper orderMapper;
+    private final OrderRepositoryV2 orderRepository;
+    private final OrderMapperV2 orderMapper;
 
-    public OrderQueryService(OrderRepository orderRepository, OrderMapper orderMapper) {
+    public OrderQueryService(OrderRepositoryV2 orderRepository, OrderMapperV2 orderMapper) {
         this.orderRepository = orderRepository;
         this.orderMapper = orderMapper;
     }

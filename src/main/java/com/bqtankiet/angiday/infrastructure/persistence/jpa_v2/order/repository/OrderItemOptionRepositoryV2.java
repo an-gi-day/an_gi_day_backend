@@ -1,0 +1,12 @@
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.repository;
+
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderItemOptionV2;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface OrderItemOptionRepositoryV2 extends JpaRepository<OrderItemOptionV2, Long> {
+    List<OrderItemOptionV2> findByOrderItemId(Long orderItemId);
+}

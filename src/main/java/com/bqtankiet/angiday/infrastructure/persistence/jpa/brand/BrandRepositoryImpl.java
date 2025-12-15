@@ -11,7 +11,7 @@ import java.util.Optional;
 /**
  * @author bqtankiet
  */
-@Repository
+@Repository("BrandRepositoryImpl")
 public class BrandRepositoryImpl implements IBrandRepository {
 
     private final BrandJpaRepository brandJpaRepository;

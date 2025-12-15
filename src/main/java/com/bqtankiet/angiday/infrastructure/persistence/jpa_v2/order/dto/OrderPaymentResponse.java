@@ -1,8 +1,8 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.dto;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentGatewayResponse;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentMethod;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentStatus;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentGatewayResponseV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentMethodV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentStatusV2;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +12,8 @@ import java.time.Instant;
 @Setter
 public class OrderPaymentResponse {
     private Long id;
-    private PaymentMethod method;
-    private PaymentStatus status;
-    private PaymentGatewayResponse gateway;
+    private PaymentMethodV2 method;
+    private PaymentStatusV2 status;
+    private PaymentGatewayResponseV2 gateway;
     private Instant createdAt;
 }

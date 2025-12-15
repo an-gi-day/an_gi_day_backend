@@ -12,20 +12,20 @@ import java.util.Optional;
  * @author bqtankiet
  */
 @Repository
-public class BrandRepositoryImpl implements IBrandRepository {
+public class BrandJpaRepositoryImplV2 implements IBrandRepository {
 
-    private final BrandJpaRepository brandJpaRepository;
-    private final BrandJpaMapper brandJpaMapper;
+    private final BrandJpaRepositoryV2 brandJpaRepository;
+    private final BrandJpaMapperV2 brandJpaMapper;
 
     @Autowired
-    public BrandRepositoryImpl(BrandJpaRepository brandJpaRepository, BrandJpaMapper brandJpaMapper) {
+    public BrandJpaRepositoryImplV2(BrandJpaRepositoryV2 brandJpaRepository, BrandJpaMapperV2 brandJpaMapper) {
         this.brandJpaRepository = brandJpaRepository;
         this.brandJpaMapper = brandJpaMapper;
     }
 
     @Override
     public List<Brand> findAll() {
-        List<BrandJpaEntity> rs = brandJpaRepository.findAll();
+        List<BrandJpaEntityV2> rs = brandJpaRepository.findAll();
         return rs.stream()
                 .map(brandJpaMapper::dtoToModel)
                 .toList();

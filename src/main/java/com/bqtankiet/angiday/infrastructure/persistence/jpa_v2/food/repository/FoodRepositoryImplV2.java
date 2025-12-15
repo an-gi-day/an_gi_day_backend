@@ -1,8 +1,8 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.repository;
 
 import com.bqtankiet.angiday.domain.food.*;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity.FoodJpaEntity;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.mapper.FoodJpaMapper;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity.FoodJpaEntityV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.mapper.FoodJpaMapperV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -15,20 +15,20 @@ import java.util.stream.Collectors;
  * @author bqtankiet
  */
 @Repository
-public class FoodRepositoryImpl implements IFoodRepository {
+public class FoodRepositoryImplV2 implements IFoodRepository {
 
-    private final FoodJpaRepository foodJpaRepository;
-    private final FoodJpaMapper foodJpaMapper;
+    private final FoodJpaRepositoryV2 foodJpaRepository;
+    private final FoodJpaMapperV2 foodJpaMapper;
 
     @Autowired
-    public FoodRepositoryImpl(FoodJpaRepository foodJpaRepository, FoodJpaMapper foodJpaMapper) {
+    public FoodRepositoryImplV2(FoodJpaRepositoryV2 foodJpaRepository, FoodJpaMapperV2 foodJpaMapper) {
         this.foodJpaRepository = foodJpaRepository;
         this.foodJpaMapper = foodJpaMapper;
     }
 
     @Override
     public Optional<Food> findById(String id) {
-        FoodJpaEntity entity = foodJpaRepository.findById(Long.parseLong(id)).orElse(null);
+        FoodJpaEntityV2 entity = foodJpaRepository.findById(Long.parseLong(id)).orElse(null);
         Food food = foodJpaMapper.dtoToModel(entity);
         return Optional.ofNullable(food);
     }

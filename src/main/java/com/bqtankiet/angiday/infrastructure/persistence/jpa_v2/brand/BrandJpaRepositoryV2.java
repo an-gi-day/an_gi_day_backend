@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * @author bqtankiet
  */
-public interface BrandJpaRepository extends JpaRepository<BrandJpaEntity,Long> {
+public interface BrandJpaRepositoryV2 extends JpaRepository<BrandJpaEntityV2,Long> {
 }

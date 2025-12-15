@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /**
  * @author bqtankiet
  */
-@Repository
+@Repository("FoodRepositoryImpl")
 public class FoodRepositoryImpl implements IFoodRepository {
 
     private final FoodJpaRepository foodJpaRepository;
