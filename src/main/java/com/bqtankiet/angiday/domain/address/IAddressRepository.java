@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface IAddressRepository {
 
-    public Optional<Address> findById(String id);
+    public Optional<Address> findById(Long id);
 
-    List<Address> findAllByUserId(String userId);
+    List<Address> findAllByUserId(Long userId);
 }

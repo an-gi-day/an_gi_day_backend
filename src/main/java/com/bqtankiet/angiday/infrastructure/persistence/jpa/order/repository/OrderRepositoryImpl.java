@@ -21,7 +21,7 @@ public class OrderRepositoryImpl implements IOrderRepository {
     }
 
     @Override
-    public Optional<Order> findById(String id) {
+    public Optional<Order> findById(Long id) {
         return Optional.empty();
     }
 

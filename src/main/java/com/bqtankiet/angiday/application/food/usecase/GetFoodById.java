@@ -18,7 +18,7 @@ public class GetFoodById {
         this.foodRepository = foodRepository;
     }
 
-    public Food call(String foodId) {
+    public Food call(Long foodId) {
         return foodRepository.findById(foodId).orElse(null);
     }
 }

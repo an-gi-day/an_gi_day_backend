@@ -25,13 +25,13 @@ public class AddressRepositoryImpl implements IAddressRepository {
 
 
     @Override
-    public Optional<Address> findById(String id) {
+    public Optional<Address> findById(Long id) {
         AddressJpaEntity addressJpaEntity = addressJpaRepository.findById(Long.valueOf(id)).orElse(null);
         return Optional.ofNullable(addressJpaMapper.dtoToModel(addressJpaEntity));
     }
 
     @Override
-    public List<Address> findAllByUserId(String userId) {
+    public List<Address> findAllByUserId(Long userId) {
         List<AddressJpaEntity> entities = addressJpaRepository.findAllByUserId(userId);
         return entities.stream().map(addressJpaMapper::dtoToModel).toList();
     }

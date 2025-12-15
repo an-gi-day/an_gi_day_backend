@@ -18,7 +18,7 @@ public class GetAddressById {
         this.addressRepository = addressRepository;
     }
 
-    public Address call(String id) {
+    public Address call(Long id) {
         return addressRepository.findById(id).orElse(null);
     }
 }

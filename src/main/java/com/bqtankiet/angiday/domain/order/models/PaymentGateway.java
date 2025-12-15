@@ -6,7 +6,7 @@ import java.util.Map;
 
 @Data
 public class PaymentGateway {
-    private String id;
+    private Long id;
     private String name;
     private String transactionId;
     private String appUrl;

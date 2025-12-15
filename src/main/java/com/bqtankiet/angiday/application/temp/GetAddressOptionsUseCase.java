@@ -21,7 +21,7 @@ public class GetAddressOptionsUseCase {
     }
 
     public List<Address> call(String userId){
-        return addressRepository.findAllByUserId(userId);
+        return addressRepository.findAllByUserId(Long.parseLong(userId));
     }
 
 }

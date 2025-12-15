@@ -41,8 +41,7 @@ public class BrandController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getBrandById(@PathVariable Long id) {
-        var rs = getBrandById
-                .call(String.valueOf(id));
+        var rs = getBrandById.call(id);
         var dto = brandResponseMapper.modelToDto(rs);
         ApiResponse<?> resp = ApiResponse.success(dto);
         return ResponseEntity.ok(resp);

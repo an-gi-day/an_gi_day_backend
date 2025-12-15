@@ -26,7 +26,7 @@ public class AddressJpaEntityV2 {
     @Column(length = 255)
     private String name;
 
-    private String userId;
+    private Long userId;
 
     private Boolean isDefault;
 }

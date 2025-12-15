@@ -8,7 +8,7 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record CheckoutResponse(
-        String orderId,
+        Long orderId,
         List<OrderItemResponse> items,
         JsonNode orderPricing,
         JsonNode payment,
@@ -24,7 +24,7 @@ public record CheckoutResponse(
     ) {
     }
     public record FoodResponse(
-            String id,
+            Long id,
             String name,
             String imageUrl,
             String description

@@ -55,7 +55,7 @@ public class FoodController {
      * Lấy food theo id
      */
     @GetMapping("/{foodId}")
-    public ResponseEntity<?> getFoodById(@PathVariable String foodId) {
+    public ResponseEntity<?> getFoodById(@PathVariable Long foodId) {
         Food food = getFoodById.call(foodId);
 
         // FAILED: Not found with id

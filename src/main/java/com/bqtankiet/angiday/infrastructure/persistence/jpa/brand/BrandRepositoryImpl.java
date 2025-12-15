@@ -32,9 +32,9 @@ public class BrandRepositoryImpl implements IBrandRepository {
     }
 
     @Override
-    public Optional<Brand> findById(String id) {
+    public Optional<Brand> findById(Long id) {
         return brandJpaRepository
-                .findById(Long.parseLong(id))
+                .findById(id)
                 .map(brandJpaMapper::dtoToModel);
     }
 }

@@ -19,7 +19,7 @@ public class getAllUserAddress {
         this.addressRepository = addressRepository;
     }
 
-    public List<Address> execute(String userId){
+    public List<Address> execute(Long userId){
         return addressRepository.findAllByUserId(userId);
     }
 

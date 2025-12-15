@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface AddressJpaRepositoryV2 extends JpaRepository<AddressJpaEntityV2,Long> {
-    List<AddressJpaEntityV2> findAllByUserId(String userId);
+    List<AddressJpaEntityV2> findAllByUserId(Long userId);
 }

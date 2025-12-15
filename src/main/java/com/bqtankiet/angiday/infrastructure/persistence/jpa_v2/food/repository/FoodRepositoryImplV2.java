@@ -27,8 +27,8 @@ public class FoodRepositoryImplV2 implements IFoodRepository {
     }
 
     @Override
-    public Optional<Food> findById(String id) {
-        FoodJpaEntityV2 entity = foodJpaRepository.findById(Long.parseLong(id)).orElse(null);
+    public Optional<Food> findById(Long id) {
+        FoodJpaEntityV2 entity = foodJpaRepository.findById(id).orElse(null);
         Food food = foodJpaMapper.dtoToModel(entity);
         return Optional.ofNullable(food);
     }
@@ -42,7 +42,7 @@ public class FoodRepositoryImplV2 implements IFoodRepository {
     }
 
     @Override
-    public List<Food> findAllByCategoryId(String categoryId) {
+    public List<Food> findAllByCategoryId(Long categoryId) {
         return List.of();
     }
 

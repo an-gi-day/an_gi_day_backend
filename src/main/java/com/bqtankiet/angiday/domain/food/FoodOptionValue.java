@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class FoodOptionValue {
-    private String id;
+    private Long id;
     private String optionValue;
     private int cost;
 }

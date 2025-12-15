@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 public class FoodOption {
-    private String id;
+    private Long id;
     private String name;
     private List<FoodOptionValue> optionValues;
 }

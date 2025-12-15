@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Address {
-    private String id;
+    private Long id;
     private String phone;
     private double longitude;
     private double latitude;

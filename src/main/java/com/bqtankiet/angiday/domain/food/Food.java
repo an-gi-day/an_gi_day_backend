@@ -17,7 +17,7 @@ import java.util.List;
 @Data
 public class Food {
 
-    private String id;
+    private Long id;
     private String name;
     private String imageUrl;
     private String description;

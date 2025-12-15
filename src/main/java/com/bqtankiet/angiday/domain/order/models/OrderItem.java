@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class OrderItem {
-    private String id;
+    private Long id;
     private Food food;
     private ItemPricing itemPricing;
     private List<ItemOption> options;

@@ -99,7 +99,7 @@ public class CreateOrderUseCase {
         return payment;
     }
 
-    public Address updateAddress(String userId, String addressId) throws CreateOrderException {
+    public Address updateAddress(String userId, Long addressId) throws CreateOrderException {
 
         Order draftOrder = getDraftOrder(userId);
         if (draftOrder == null) {

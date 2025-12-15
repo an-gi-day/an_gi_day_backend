@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.mapper;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.dto.OrderResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.dto.OrderResponse;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderV2;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentMapperV2;
 import org.mapstruct.Mapper;

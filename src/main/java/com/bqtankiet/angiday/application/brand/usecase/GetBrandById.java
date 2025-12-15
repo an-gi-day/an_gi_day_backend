@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author bqtankiet
  */
 @Service
-public class GetBrandById implements DefaultUseCase<String, Brand> {
+public class GetBrandById implements DefaultUseCase<Long, Brand> {
 
     private final IBrandRepository brandRepository;
 
@@ -24,7 +24,7 @@ public class GetBrandById implements DefaultUseCase<String, Brand> {
     }
 
     @Override
-    public Brand call(String id) {
+    public Brand call(Long id) {
         var rs = brandRepository.findById(id);
         if (rs.isPresent()) {
             return rs.get();

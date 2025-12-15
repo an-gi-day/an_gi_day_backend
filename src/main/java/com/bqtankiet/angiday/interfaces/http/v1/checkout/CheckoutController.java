@@ -106,7 +106,7 @@ public class CheckoutController {
         String userId = getCurrentUserId.call();
         String addressId = request.get("addressId");
         try {
-            Address address = createOrderUseCase.updateAddress(userId, addressId);
+            Address address = createOrderUseCase.updateAddress(userId, Long.parseLong(addressId));
             return ResponseEntity.ok().body(ApiResponse.success(address));
         } catch (CreateOrderException e) {
             return ResponseEntity.badRequest().body(ApiResponse.error(HttpStatus.BAD_REQUEST.value(), e.getMessage()));
