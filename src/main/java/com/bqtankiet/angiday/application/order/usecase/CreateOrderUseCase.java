@@ -65,9 +65,9 @@ public class CreateOrderUseCase {
         return order;
     }
 
-    public Order acceptAndSave(String userId) throws CreateOrderException {
+    public Order confirmAndSave(String userId) throws CreateOrderException {
         Order order = getDraftOrder(userId);
-        order.setStatus("ACCEPTED");
+        order.setStatus("CONFIRMED");
         Order savedOrder = saveOrderUseCase.call(order);
         if (savedOrder == null) {
             throw CreateOrderException.CREATE_ORDER_FAILED;
@@ -131,7 +131,7 @@ public class CreateOrderUseCase {
         }
         String paymentMethod = order.getPayment().getPaymentMethod();
 
-        Order savedOrder = acceptAndSave(userId);
+        Order savedOrder = confirmAndSave(userId);
         if ("cash".equals(paymentMethod)) {
             return savedOrder;
         }
