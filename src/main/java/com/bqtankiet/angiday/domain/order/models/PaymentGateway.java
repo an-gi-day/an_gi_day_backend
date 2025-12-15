@@ -9,11 +9,8 @@ public class PaymentGateway {
     private String id;
     private String name;
     private String transactionId;
-    private String redirectUrl;
+    private String appUrl;
+    private String webUrl;
     private Map<String, Object> extraData;
 
-    public static PaymentGateway create(String paymentMethod) {
-        if ("cash".equalsIgnoreCase(paymentMethod)) {return null;}
-        return null; // FIXME: Ignore return error.
-    }
 }

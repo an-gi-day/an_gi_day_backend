@@ -6,7 +6,9 @@ import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.repository.Food
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class AddressRepositoryImpl implements IAddressRepository {
@@ -24,6 +26,12 @@ public class AddressRepositoryImpl implements IAddressRepository {
     @Override
     public Optional<Address> findById(String id) {
         AddressJpaEntity addressJpaEntity = addressJpaRepository.findById(Long.valueOf(id)).orElse(null);
-        return Optional.of(addressJpaMapper.dtoToModel(addressJpaEntity));
+        return Optional.ofNullable(addressJpaMapper.dtoToModel(addressJpaEntity));
+    }
+
+    @Override
+    public List<Address> findAllByUserId(String userId) {
+        List<AddressJpaEntity> entities = addressJpaRepository.findAllByUserId(userId);
+        return entities.stream().map(addressJpaMapper::dtoToModel).toList();
     }
 }

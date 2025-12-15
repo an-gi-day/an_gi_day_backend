@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.interfaces.http.v1.order.dto;
+package com.bqtankiet.angiday.interfaces.http.v1.checkout.dto;
 
 import java.util.List;
 

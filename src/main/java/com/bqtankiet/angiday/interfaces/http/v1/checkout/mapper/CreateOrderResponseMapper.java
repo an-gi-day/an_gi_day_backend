@@ -1,8 +1,8 @@
-package com.bqtankiet.angiday.interfaces.http.v1.order.mapper;
+package com.bqtankiet.angiday.interfaces.http.v1.checkout.mapper;
 
 import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.domain.order.models.Order;
-import com.bqtankiet.angiday.interfaces.http.v1.order.dto.CreateOrderResponse;
+import com.bqtankiet.angiday.interfaces.http.v1.checkout.dto.CheckoutResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
 
@@ -17,32 +17,32 @@ public class CreateOrderResponseMapper {
         this.objectMapper = objectMapper;
     }
 
-    public CreateOrderResponse toResponse(Order order) {
-        List<CreateOrderResponse.OrderItemResponse> items = order.getItems().stream()
-                .map(item -> new CreateOrderResponse.OrderItemResponse(
+    public CheckoutResponse toResponse(Order order) {
+        List<CheckoutResponse.OrderItemResponse> items = order.getItems().stream()
+                .map(item -> new CheckoutResponse.OrderItemResponse(
                         mapFood(item.getFood()), // map domain Food → FoodResponse
                         objectMapper.valueToTree(item.getItemPricing()), // convert itemPricing to JsonNode
                         objectMapper.valueToTree(item.getOptions())     // convert options to JsonNode
                 ))
                 .toList();
 
-        return new CreateOrderResponse(
+        return new CheckoutResponse(
                 order.getId(),
                 items,
                 objectMapper.valueToTree(order.getOrderPricing()),
                 objectMapper.valueToTree(order.getPayment()),
                 objectMapper.valueToTree(order.getAddress()),
-                order.getVoucherCode(),
+                objectMapper.valueToTree(order.getAppliedVouchers()),
                 order.getStatus(),
                 order.getCreatedAt()
         );
     }
 
-    private CreateOrderResponse.FoodResponse mapFood(Food food) {
+    private CheckoutResponse.FoodResponse mapFood(Food food) {
         if (food == null) {
             return null;
         }
-        return new CreateOrderResponse.FoodResponse(
+        return new CheckoutResponse.FoodResponse(
                 food.getId(),
                 food.getName(),
                 food.getImageUrl(),

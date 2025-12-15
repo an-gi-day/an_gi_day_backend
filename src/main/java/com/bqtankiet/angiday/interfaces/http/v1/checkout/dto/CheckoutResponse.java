@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.interfaces.http.v1.order.dto;
+package com.bqtankiet.angiday.interfaces.http.v1.checkout.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -7,13 +7,13 @@ import java.time.Instant;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record CreateOrderResponse(
+public record CheckoutResponse(
         String orderId,
         List<OrderItemResponse> items,
         JsonNode orderPricing,
         JsonNode payment,
         JsonNode address,
-        String voucherCode,
+        JsonNode appliedVouchers,
         String status,
         Instant createdAt
 ) {

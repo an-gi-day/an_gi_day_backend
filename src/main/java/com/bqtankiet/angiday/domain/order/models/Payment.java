@@ -12,8 +12,7 @@ public class Payment {
     private PaymentGateway gateway;
 
     public static Payment create(String paymentMethod) {
-        PaymentGateway gateway = PaymentGateway.create(paymentMethod);
-        return new Payment(null, paymentMethod, "Awaiting", gateway);
+        return new Payment(null, paymentMethod, "Awaiting", null);
     }
 
 }

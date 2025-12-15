@@ -14,7 +14,7 @@ public class Order {
     private OrderPricing orderPricing;
     private Payment payment;
     private Address address;
-    private String voucherCode;
+    private List<Voucher> appliedVouchers;
     private String userId;
     private String status;
     private Instant createdAt;
@@ -22,10 +22,11 @@ public class Order {
     public Order(String userId) {
         this.userId = userId;
         this.orderPricing = new OrderPricing();
+        this.appliedVouchers = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public boolean addItem(OrderItem orderItem) {
-        if (this.items == null) {this.items = new ArrayList<>();}
         this.orderPricing.updatePricing(orderItem);
         return items.add(orderItem);
     }

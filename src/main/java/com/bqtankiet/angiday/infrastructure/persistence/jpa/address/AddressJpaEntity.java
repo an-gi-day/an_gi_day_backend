@@ -27,4 +27,6 @@ public class AddressJpaEntity {
     private String name;
 
     private String userId;
+
+    private Boolean isDefault;
 }

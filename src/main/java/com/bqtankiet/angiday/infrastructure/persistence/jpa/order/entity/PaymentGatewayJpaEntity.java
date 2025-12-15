@@ -23,8 +23,9 @@ public class PaymentGatewayJpaEntity {
     @Column(length = 100)
     private String transactionId;
 
-    @Column(length = 255)
-    private String redirectUrl;
+    private String appUrl;
+
+    private String webUrl;
 
     // Lưu extraData ở dạng JSON (cần converter)
     @Convert(converter = JpaConverterJson.class)

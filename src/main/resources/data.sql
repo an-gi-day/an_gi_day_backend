@@ -76,5 +76,5 @@ INSERT INTO "FOOD_OPTION_VALUES" ("ID", "COST", "OPTION_VALUE", "OPTION_ID") VAL
                                                                                  ('333-1', 6000, '2 trứng', '333'),
                                                                                  ('333-2', 10000, '3 trứng', '333');
 
-INSERT INTO "ADDRESSES" ("ID", "LATITUDE", "LONGITUDE", "LOCATION", "NAME", "PHONE", "USER_ID")
-VALUES (123, 10.871355874268529, 106.79179776930363, 'VQCR+GP6, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam', 'Trường Đại học Nông Lâm TP. Hồ Chí Minh', '012345678', '1');
+INSERT INTO "ADDRESSES" ("ID", "LATITUDE", "LONGITUDE", "LOCATION", "NAME", "PHONE", "USER_ID", "IS_DEFAULT")
+VALUES (123, 10.871355874268529, 106.79179776930363, 'VQCR+GP6, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam', 'Trường Đại học Nông Lâm TP. Hồ Chí Minh', '012345678', '1', true);
