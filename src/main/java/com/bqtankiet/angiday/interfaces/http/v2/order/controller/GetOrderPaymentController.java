@@ -2,16 +2,12 @@ package com.bqtankiet.angiday.interfaces.http.v2.order.controller;
 
 import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.domain.order.models.Order;
-import com.bqtankiet.angiday.domain.order.models.OrderItem;
 import com.bqtankiet.angiday.domain.payment.Payment;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
-import com.bqtankiet.angiday.interfaces.http.v2.order.dto.OrderPaymentResponse;
 import lombok.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(GetOrderPaymentController.URL)

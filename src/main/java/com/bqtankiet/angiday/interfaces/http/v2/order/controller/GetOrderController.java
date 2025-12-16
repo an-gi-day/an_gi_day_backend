@@ -3,6 +3,7 @@ package com.bqtankiet.angiday.interfaces.http.v2.order.controller;
 import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.order.helper.GenerateOrderLinks;
 import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.OrderResponseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -32,21 +33,14 @@ public class GetOrderController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseNotFound());
             }
             return ResponseEntity.ok().body(responseSuccess(order));
-        }  catch (Exception e) {
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(ApiResponse.error(400, e.getMessage()));
         }
     }
 
     private ApiResponse<?> responseSuccess(Order order) {
         var apiResponse = ApiResponse.success(orderResponseMapper.toDto(order));
-        URI location = URI.create(URL +"/"+ order.getId());
-        apiResponse.addMetadata("_links", Map.of(
-                "_self", location.toString(),
-                "items", location + "/items",
-                "payment", location + "/payment",
-                "address", location + "/address",
-                "vouchers", location + "/vouchers"
-        ));
+        apiResponse.addMetadata("_links", GenerateOrderLinks.generate(order.getId()));
         return apiResponse;
     }
 

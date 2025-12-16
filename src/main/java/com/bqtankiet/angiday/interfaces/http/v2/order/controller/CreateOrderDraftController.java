@@ -7,6 +7,7 @@ import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import com.bqtankiet.angiday.interfaces.http.v2.order.dto.CreateDraftOrderRequest;
 import com.bqtankiet.angiday.interfaces.http.v2.order.dto.OrderResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.order.helper.GenerateOrderLinks;
 import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.DraftOrderCommandMapper;
 import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.OrderResponseMapper;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
-import java.util.Map;
 
 @RestController
 @RequestMapping(CreateOrderDraftController.URL)
@@ -48,9 +48,9 @@ public class CreateOrderDraftController {
 
     private ApiResponse<?> responseSuccess(Order order) {
         OrderResponse orderResponse = orderResponseMapper.toDto(order);
-        URI location = getLocation(order.getId());
         ApiResponse<?> apiResponse = ApiResponse.success(orderResponse);
-        apiResponse.addMetadata("_links", generateLinks(location.toString()));
+        apiResponse.addMetadata("_links", GenerateOrderLinks.generate(order.getId()));
+        URI location = getLocation(order.getId());
         ResponseEntity.created(location).body(apiResponse);
         return apiResponse;
     }
@@ -62,16 +62,6 @@ public class CreateOrderDraftController {
 
     private URI getLocation(Long orderId) {
         return URI.create(URL + "/" + orderId);
-    }
-
-    private Map<String, String> generateLinks(String location) {
-        return Map.of(
-                "_self", location,
-                "items", location + "/items",
-                "payment", location + "/payment",
-                "address", location + "/address",
-                "vouchers", location + "/vouchers"
-        );
     }
 
 }

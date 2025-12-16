@@ -4,6 +4,7 @@ import com.bqtankiet.angiday.application.order.usecase.ConfirmOrderUseCase;
 import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.order.helper.GenerateOrderLinks;
 import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.OrderResponseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,8 @@ public class ConfirmOrderController {
     }
 
     private ApiResponse<?> responseSuccess(Order order) {
-        return ApiResponse.success(orderResponseMapper.toDto(order));
+        var apiResponse = ApiResponse.success(orderResponseMapper.toDto(order));
+        apiResponse.addMetadata("_links", GenerateOrderLinks.generate(order.getId()));
+        return ApiResponse.success(apiResponse);
     }
 }
