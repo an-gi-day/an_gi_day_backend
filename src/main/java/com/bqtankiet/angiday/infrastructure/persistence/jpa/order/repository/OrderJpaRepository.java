@@ -11,7 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderJpaRepository extends JpaRepository<OrderJpaEntity,Long> {
     @Modifying
-    @Transactional
-    @Query("DELETE FROM OrderJpaEntity o WHERE o.userId = :userId AND o.status = :status")
-    void deleteByUserIdAndStatus(@Param("userId") Long userId, @Param("status") String status);
+    void deleteByUserIdAndStatus(Long userId, String status);
 }

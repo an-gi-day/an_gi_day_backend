@@ -39,11 +39,7 @@ public class CheckoutOrderUseCase {
         validate(command);
         Long userId = command.getUserId();
 
-        try {
-            orderRepository.removeOrderByUserIdAndStatus(userId, "DRAFT");
-        } catch (Exception e) {
-            log.error(e.getMessage());
-        }
+        orderRepository.removeOrderByUserIdAndStatus(userId, "DRAFT");
 
         Address address = addressRepository.getDefaultAddress(userId).orElse(new Address());
 

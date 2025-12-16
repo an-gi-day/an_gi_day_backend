@@ -30,7 +30,7 @@ public class CreateOrderDraftController {
     private final DraftOrderCommandMapper draftOrderCommandMapper;
     private final OrderResponseMapper orderResponseMapper;
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<?> createOrder(
             @RequestBody CreateDraftOrderRequest request
     ) {

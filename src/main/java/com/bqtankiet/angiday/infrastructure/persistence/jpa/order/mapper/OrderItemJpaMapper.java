@@ -14,7 +14,7 @@ public interface OrderItemJpaMapper extends
         DomainEntityMapper<OrderItem, OrderItemJpaEntity> {
 
     @Override
-    @Mapping(target = "food", ignore = true)
+//    @Mapping(target = "food", ignore = true)
     OrderItem toDomain(OrderItemJpaEntity orderItemJpaEntity);
 
     @Override

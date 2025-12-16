@@ -4,6 +4,7 @@ import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.domain.order.repository.IOrderRepository;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.order.entity.OrderJpaEntity;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.order.mapper.OrderJpaMapper;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -38,6 +39,7 @@ public class OrderRepositoryImpl implements IOrderRepository {
         return Optional.of(orderJpaMapper.toDomain(savedOrder));
     }
 
+    @Transactional
     @Override
     public void removeOrderByUserIdAndStatus(Long userId, String status) {
         orderJpaRepository.deleteByUserIdAndStatus(userId, status);

@@ -24,7 +24,7 @@ public class OrderJpaEntity {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<OrderItemJpaEntity> items;
 
-    @Embedded
+    @Embedded   
     private OrderPricingJpaEmbed orderPricing;
 
     @OneToOne(cascade = CascadeType.ALL)

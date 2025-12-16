@@ -4,6 +4,8 @@ import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.domain.order.models.OrderItem;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.order.dto.OrderItemResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.OrderItemResponseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,7 @@ import java.util.List;
 public class GetOrderItemController {
     public static final  String URL = "/api/v2/orders/{orderId}/items";
     private final GetOrderById getOrderById;
+    private final OrderItemResponseMapper orderItemResponseMapper;
 
     @GetMapping()
     public ResponseEntity<?> getItems(
@@ -35,7 +38,8 @@ public class GetOrderItemController {
     }
 
     private ApiResponse<?> responseSuccess(List<OrderItem> items) {
-        return ApiResponse.success(items);
+        List<OrderItemResponse> itemsDto = items.stream().map(orderItemResponseMapper::toDto).toList();
+        return ApiResponse.success(itemsDto);
     }
 
     private ApiResponse<?> responseOrderNotFound() {
