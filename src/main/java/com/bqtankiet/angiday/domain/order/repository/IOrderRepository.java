@@ -10,4 +10,6 @@ public interface IOrderRepository {
     Optional<Order> updateOrder(Order order);
 
     Optional<Order> saveOrder(Order order);
+
+    void removeOrderByUserIdAndStatus(Long userId, String draft);
 }

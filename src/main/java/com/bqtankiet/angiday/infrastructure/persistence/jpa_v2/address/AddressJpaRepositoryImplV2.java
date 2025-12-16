@@ -3,7 +3,6 @@ package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address;
 import com.bqtankiet.angiday.domain.address.Address;
 import com.bqtankiet.angiday.domain.address.IAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,13 +23,18 @@ public class AddressJpaRepositoryImplV2 implements IAddressRepository {
 
     @Override
     public Optional<Address> findById(Long id) {
-        AddressJpaEntityV2 addressJpaEntityV2 = addressJpaRepositoryV2.findById(Long.valueOf(id)).orElse(null);
-        return Optional.ofNullable(addressJpaMapperV2.dtoToModel(addressJpaEntityV2));
+        AddressJpaEntityV2 addressJpaEntityV2 = addressJpaRepositoryV2.findById(id).orElse(null);
+        return Optional.ofNullable(addressJpaMapperV2.toDomain(addressJpaEntityV2));
     }
 
     @Override
     public List<Address> findAllByUserId(Long userId) {
         List<AddressJpaEntityV2> entities = addressJpaRepositoryV2.findAllByUserId(userId);
-        return entities.stream().map(addressJpaMapperV2::dtoToModel).toList();
+        return entities.stream().map(addressJpaMapperV2::toDomain).toList();
+    }
+
+    @Override
+    public Optional<Address> getDefaultAddress(Long userId) {
+        return null;
     }
 }

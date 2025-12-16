@@ -20,7 +20,6 @@ public class OrderAddressV2 {
     private String name;
     private String phone;
     private String location;
-
-    @Embedded
-    private GeoLocationV2 coordinates;
+    private Double longitude;
+    private Double latitude;
 }

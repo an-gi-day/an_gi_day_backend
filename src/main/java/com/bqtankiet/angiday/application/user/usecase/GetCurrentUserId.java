@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GetCurrentUserId {
 
-    public String call(){
-        return "1"; // example
+    public Long call(){
+        return 1L; // example
     }
 
 }

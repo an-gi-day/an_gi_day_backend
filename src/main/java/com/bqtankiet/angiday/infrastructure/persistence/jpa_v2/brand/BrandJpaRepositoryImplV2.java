@@ -27,7 +27,7 @@ public class BrandJpaRepositoryImplV2 implements IBrandRepository {
     public List<Brand> findAll() {
         List<BrandJpaEntityV2> rs = brandJpaRepository.findAll();
         return rs.stream()
-                .map(brandJpaMapper::dtoToModel)
+                .map(brandJpaMapper::toDomain)
                 .toList();
     }
 
@@ -35,6 +35,6 @@ public class BrandJpaRepositoryImplV2 implements IBrandRepository {
     public Optional<Brand> findById(Long id) {
         return brandJpaRepository
                 .findById(id)
-                .map(brandJpaMapper::dtoToModel);
+                .map(brandJpaMapper::toDomain);
     }
 }

@@ -7,7 +7,7 @@ import com.bqtankiet.angiday.application.temp.GetPaymentOptionsUseCase;
 import com.bqtankiet.angiday.application.user.usecase.GetCurrentUserId;
 import com.bqtankiet.angiday.domain.address.Address;
 import com.bqtankiet.angiday.domain.order.models.Order;
-import com.bqtankiet.angiday.domain.order.models.Payment;
+import com.bqtankiet.angiday.domain.payment.Payment;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import com.bqtankiet.angiday.interfaces.http.v1.checkout.dto.CheckoutRequest;
 import com.bqtankiet.angiday.interfaces.http.v1.checkout.mapper.CreateOrderResponseMapper;
@@ -43,7 +43,7 @@ public class CheckoutController {
      */
     @PostMapping()
     public ResponseEntity<?> draftOrder(@RequestBody CheckoutRequest request) {
-        String userId = getCurrentUserId.call();
+        Long userId = getCurrentUserId.call();
         // FAILED:
         // TODO: Kiểm tra đầu vào
 
@@ -56,7 +56,7 @@ public class CheckoutController {
 
     @GetMapping()
     public ResponseEntity<?> getDraftOrder() {
-        String userId = getCurrentUserId.call();
+        Long userId = getCurrentUserId.call();
 
         try {
             Order order = createOrderUseCase.getDraftOrder(userId);
@@ -79,7 +79,7 @@ public class CheckoutController {
 
     @PostMapping("/payment-method")
     public ResponseEntity<?> updatePaymentMethod(@RequestBody Map<String, String> request) {
-        String userId = getCurrentUserId.call();
+        Long userId = getCurrentUserId.call();
         String paymentMethod = request.get("paymentMethod");
         try {
             Payment payment = createOrderUseCase.updatePayment(userId, paymentMethod);
@@ -91,7 +91,7 @@ public class CheckoutController {
 
     @PostMapping("/confirm")
     public ResponseEntity<?> confirmOrder() {
-        String userId = getCurrentUserId.call();
+        Long userId = getCurrentUserId.call();
         try {
             Order order = createOrderUseCase.confirmOrder(userId);
             var respDto = createOrderResponseMapper.toResponse(order);
@@ -103,7 +103,7 @@ public class CheckoutController {
 
     @PostMapping("/address")
     public ResponseEntity<?> updateAddress(@RequestBody Map<String, String> request) {
-        String userId = getCurrentUserId.call();
+        Long userId = getCurrentUserId.call();
         String addressId = request.get("addressId");
         try {
             Address address = createOrderUseCase.updateAddress(userId, Long.parseLong(addressId));

@@ -2,19 +2,16 @@ package com.bqtankiet.angiday.domain.food;
 
 import com.bqtankiet.angiday.domain.brand.Brand;
 import com.bqtankiet.angiday.domain.category.Category;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * POJO Food model
- *
- * @author bqtankiet
- */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Food {
 
     private Long id;
@@ -27,7 +24,7 @@ public class Food {
     private Integer soldCount;
     private List<FoodOption> options;
 
-    public List<FoodOptionValue> getOptionValuesByIds(List<String> ids) {
+    public List<FoodOptionValue> getOptionValuesByIds(List<Long> ids) {
         if (ids == null || ids.isEmpty()) {
             return Collections.emptyList();
         }

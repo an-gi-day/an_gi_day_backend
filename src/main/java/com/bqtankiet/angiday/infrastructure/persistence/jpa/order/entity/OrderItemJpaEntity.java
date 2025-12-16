@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,9 +27,9 @@ public class OrderItemJpaEntity {
     private FoodJpaEntity food;
 
     @Embedded
-    private ItemPricingJpaEmbed itemPricing;
+    private OrderItemPricingJpaEmbed itemPricing;
 
     @OneToMany(mappedBy = "orderItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<ItemOptionJpaEntity> options;
+    private List<OrderItemOptionJpaEntity> options;
 
 }

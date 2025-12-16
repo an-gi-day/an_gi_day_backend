@@ -20,8 +20,8 @@ public class GetAddressOptionsUseCase {
         this.addressRepository = addressRepository;
     }
 
-    public List<Address> call(String userId){
-        return addressRepository.findAllByUserId(Long.parseLong(userId));
+    public List<Address> call(Long userId){
+        return addressRepository.findAllByUserId(userId);
     }
 
 }

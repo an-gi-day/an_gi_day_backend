@@ -1,13 +1,12 @@
 package com.bqtankiet.angiday.domain.category;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * POJO Category model
- *
- * @author bqtankiet
- */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Category {
 
     private Long id;

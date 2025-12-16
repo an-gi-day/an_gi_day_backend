@@ -5,7 +5,9 @@ import java.util.Optional;
 
 public interface IAddressRepository {
 
-    public Optional<Address> findById(Long id);
+    Optional<Address> findById(Long id);
 
     List<Address> findAllByUserId(Long userId);
+
+    Optional<Address> getDefaultAddress(Long userId);
 }

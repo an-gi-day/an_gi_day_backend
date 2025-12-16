@@ -26,7 +26,7 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
     public List<Category> findAll() {
         return repositoryJpa.findAll()
                 .stream()
-                .map(mapper::dtoToModel)
+                .map(mapper::toDomain)
                 .collect(Collectors.toList());
     }
 }

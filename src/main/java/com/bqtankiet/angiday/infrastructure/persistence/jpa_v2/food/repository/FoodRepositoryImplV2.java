@@ -29,7 +29,7 @@ public class FoodRepositoryImplV2 implements IFoodRepository {
     @Override
     public Optional<Food> findById(Long id) {
         FoodJpaEntityV2 entity = foodJpaRepository.findById(id).orElse(null);
-        Food food = foodJpaMapper.dtoToModel(entity);
+        Food food = foodJpaMapper.toDomain(entity);
         return Optional.ofNullable(food);
     }
 
@@ -37,7 +37,7 @@ public class FoodRepositoryImplV2 implements IFoodRepository {
     public List<Food> findAll() {
         var rs = foodJpaRepository.findAll();
         return rs.stream()
-                .map(foodJpaMapper::dtoToModel)
+                .map(foodJpaMapper::toDomain)
                 .toList();
     }
 
@@ -51,7 +51,7 @@ public class FoodRepositoryImplV2 implements IFoodRepository {
         String keywordNoAccent = removeAccent(keyword);
         return foodJpaRepository.search(keywordNoAccent)
                 .stream()
-                .map(foodJpaMapper::dtoToModel)
+                .map(foodJpaMapper::toDomain)
                 .collect(Collectors.toList());
     }
 

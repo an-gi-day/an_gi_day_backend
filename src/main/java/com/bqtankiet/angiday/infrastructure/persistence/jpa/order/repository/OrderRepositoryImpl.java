@@ -22,7 +22,7 @@ public class OrderRepositoryImpl implements IOrderRepository {
 
     @Override
     public Optional<Order> findById(Long id) {
-        return Optional.empty();
+        return orderJpaRepository.findById(id).map(orderJpaMapper::toDomain);
     }
 
     @Override
@@ -34,6 +34,11 @@ public class OrderRepositoryImpl implements IOrderRepository {
     public Optional<Order> saveOrder(Order order) {
         OrderJpaEntity orderJpaEntity = orderJpaMapper.modelToDto(order);
         OrderJpaEntity savedOrder = orderJpaRepository.save(orderJpaEntity);
-        return Optional.of(orderJpaMapper.dtoToModel(savedOrder));
+        return Optional.of(orderJpaMapper.toDomain(savedOrder));
+    }
+
+    @Override
+    public void removeOrderByUserIdAndStatus(Long userId, String status) {
+        orderJpaRepository.deleteByUserIdAndStatus(userId, status);
     }
 }

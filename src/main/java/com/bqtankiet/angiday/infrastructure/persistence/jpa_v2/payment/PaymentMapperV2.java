@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment;
 
-import com.bqtankiet.angiday.interfaces.http.v2.dto.OrderPaymentResponse;
+import com.bqtankiet.angiday.interfaces.http.v2.order.dto.OrderPaymentResponse;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = {PaymentGatewayMapperV2.class})

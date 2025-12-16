@@ -21,9 +21,8 @@ public class GetAllUserAddressController {
 
     @GetMapping("/api/v1/users/me/address")
     public ResponseEntity<?> getAllAddress(){
-        String userId = getCurrentUserId.call();
-        Long longUserId = Long.parseLong(userId);
-        var listAddress = getAllUserAddress.execute(longUserId);
+        Long userId = getCurrentUserId.call();
+        var listAddress = getAllUserAddress.execute(userId);
         return ResponseEntity.ok().body(ApiResponse.success(listAddress));
     }
 

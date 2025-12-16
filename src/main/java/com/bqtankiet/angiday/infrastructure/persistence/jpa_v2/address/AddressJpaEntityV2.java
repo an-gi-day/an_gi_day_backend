@@ -20,10 +20,8 @@ public class AddressJpaEntityV2 {
 
     private double latitude;
 
-    @Column(length = 255)
     private String location;
 
-    @Column(length = 255)
     private String name;
 
     private Long userId;

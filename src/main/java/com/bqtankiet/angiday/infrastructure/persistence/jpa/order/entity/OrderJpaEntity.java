@@ -39,7 +39,7 @@ public class OrderJpaEntity {
 
     private String status;
 
-    private String userId;
+    private Long userId;
 
     private Instant createdAt;
 

@@ -1,5 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity;
 
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.voucher.VoucherV2;
 import jakarta.persistence.*;
 import lombok.*;
 

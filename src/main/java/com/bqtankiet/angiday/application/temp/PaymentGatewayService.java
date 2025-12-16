@@ -1,7 +1,7 @@
 package com.bqtankiet.angiday.application.temp;
 
 import com.bqtankiet.angiday.domain.order.models.Order;
-import com.bqtankiet.angiday.domain.order.models.PaymentGateway;
+import com.bqtankiet.angiday.domain.payment.PaymentGateway;
 import org.springframework.stereotype.Service;
 
 @Service

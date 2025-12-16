@@ -5,5 +5,5 @@ import java.util.List;
 public record OrderItemRequest(
         Long foodId,
         Integer quantity,
-        List<String> optionIds
+        List<Long> optionIds
 ){}

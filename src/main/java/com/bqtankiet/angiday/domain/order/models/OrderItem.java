@@ -2,24 +2,24 @@ package com.bqtankiet.angiday.domain.order.models;
 
 import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.domain.food.FoodOptionValue;
-import com.bqtankiet.angiday.domain.food.IFoodRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class OrderItem {
     private Long id;
     private Food food;
-    private ItemPricing itemPricing;
-    private List<ItemOption> options;
+    private OrderItemPricing itemPricing;
+    private List<OrderItemOption> options;
 
     public static OrderItem create(Food food, Integer quantity, List<FoodOptionValue> selectedOptions) {
-        ItemPricing itemPricing = ItemPricing.autoPricing(food, quantity, selectedOptions);
-        List<ItemOption> itemOptions = selectedOptions.stream().map(ItemOption::createFromFoodOptionValue).toList();
+        OrderItemPricing itemPricing = OrderItemPricing.autoPricing(food, quantity, selectedOptions);
+        List<OrderItemOption> itemOptions = selectedOptions.stream().map(OrderItemOption::createFromFoodOptionValue).toList();
         return new OrderItem(null, food, itemPricing, itemOptions);
     }
 }

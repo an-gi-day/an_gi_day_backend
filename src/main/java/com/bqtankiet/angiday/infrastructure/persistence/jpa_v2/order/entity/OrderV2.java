@@ -26,7 +26,7 @@ public class OrderV2 {
     private OrderStatusV2 status;
 
     @Embedded
-    private PricingV2 pricing;
+    private OrderPricingV2 pricing;
 
     @OneToMany(
             mappedBy = "order",
@@ -38,15 +38,13 @@ public class OrderV2 {
 
     @OneToOne(
             mappedBy = "order",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.ALL
     )
     private PaymentV2 payment;
 
     @OneToOne(
             mappedBy = "order",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.ALL
     )
     private OrderAddressV2 address;
 

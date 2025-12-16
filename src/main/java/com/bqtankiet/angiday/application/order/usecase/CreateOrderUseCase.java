@@ -10,8 +10,8 @@ import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.domain.food.FoodOptionValue;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.domain.order.models.OrderItem;
-import com.bqtankiet.angiday.domain.order.models.Payment;
-import com.bqtankiet.angiday.domain.order.models.PaymentGateway;
+import com.bqtankiet.angiday.domain.payment.Payment;
+import com.bqtankiet.angiday.domain.payment.PaymentGateway;
 import com.bqtankiet.angiday.interfaces.http.v1.checkout.dto.CheckoutRequest;
 import com.bqtankiet.angiday.interfaces.http.v1.checkout.dto.OrderItemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class CreateOrderUseCase {
     private final GetAddressById getAddressById;
     private final PaymentGatewayService paymentGatewayService;
 
-    private final Map<String, Order> draftOrdersCache = new HashMap<>();
+    private final Map<Long, Order> draftOrdersCache = new HashMap<>();
     private final GetPaymentOptionsUseCase getPaymentOptionsUseCase;
 
     @Autowired
@@ -41,7 +41,7 @@ public class CreateOrderUseCase {
         this.getPaymentOptionsUseCase = getPaymentOptionsUseCase;
     }
 
-    public Order createDraft(String userId, CheckoutRequest request) {
+    public Order createDraft(Long userId, CheckoutRequest request) {
 
         Order order = new Order(userId);
 
@@ -65,7 +65,7 @@ public class CreateOrderUseCase {
         return order;
     }
 
-    public Order confirmAndSave(String userId) throws CreateOrderException {
+    public Order confirmAndSave(Long userId) throws CreateOrderException {
         Order order = getDraftOrder(userId);
         order.setStatus("CONFIRMED");
         Order savedOrder = saveOrderUseCase.call(order);
@@ -75,11 +75,11 @@ public class CreateOrderUseCase {
         return savedOrder;
     }
 
-    public boolean existDraft(String userId) {
+    public boolean existDraft(Long userId) {
         return draftOrdersCache.containsKey(userId);
     }
 
-    public Order getDraftOrder(String userId) throws CreateOrderException {
+    public Order getDraftOrder(Long userId) throws CreateOrderException {
         Order order = draftOrdersCache.get(userId);
         if (order == null) {
             throw CreateOrderException.ORDER_NOT_FOUND;
@@ -87,7 +87,7 @@ public class CreateOrderUseCase {
         return order;
     }
 
-    public Payment updatePayment(String userId, String paymentMethod) throws CreateOrderException {
+    public Payment updatePayment(Long userId, String paymentMethod) throws CreateOrderException {
         if (getDraftOrder(userId) == null) {
             throw CreateOrderException.ORDER_NOT_FOUND;
         }
@@ -99,7 +99,7 @@ public class CreateOrderUseCase {
         return payment;
     }
 
-    public Address updateAddress(String userId, Long addressId) throws CreateOrderException {
+    public Address updateAddress(Long userId, Long addressId) throws CreateOrderException {
 
         Order draftOrder = getDraftOrder(userId);
         if (draftOrder == null) {
@@ -115,7 +115,7 @@ public class CreateOrderUseCase {
         return address;
     }
 
-    public Order confirmOrder(String userId) throws CreateOrderException {
+    public Order confirmOrder(Long userId) throws CreateOrderException {
         Order order = getDraftOrder(userId);
         if (order == null) {
             throw CreateOrderException.ORDER_NOT_FOUND;

@@ -2,13 +2,11 @@ package com.bqtankiet.angiday.domain.brand;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * POJO Brand model
- * @author bqtankiet
- */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Brand {
 
     private Long id;

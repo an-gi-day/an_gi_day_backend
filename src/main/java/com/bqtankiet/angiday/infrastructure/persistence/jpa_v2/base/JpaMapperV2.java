@@ -1,8 +1,9 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.base;
 
-public interface JpaMapperV2<M, D> {
+public interface JpaMapperV2<D, E> {
 
-    M dtoToModel(D dto);
-    D modelToDto(M model);
+    D toDomain(E entity);
+
+    E toEntity(D domain);
 
 }

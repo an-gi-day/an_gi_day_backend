@@ -31,7 +31,7 @@ public class CategoryController {
     public ResponseEntity<?> category() {
             var rs = getAllCategory.call();
             var dto = rs.stream()
-                    .map(categoryMapper::modelToDto)
+                    .map(categoryMapper::toDto)
                     .toList();
             ApiResponse<?> apiResponse = ApiResponse.success(dto);
             apiResponse.addMetadata("size", dto.size());
