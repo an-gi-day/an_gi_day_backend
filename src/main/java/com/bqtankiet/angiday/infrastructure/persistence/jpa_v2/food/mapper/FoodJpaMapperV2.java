@@ -2,8 +2,8 @@ package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.mapper;
 
 import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.category.CategoryJpaMapper;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.base.JpaMapperV2;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.BrandJpaMapperV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.JpaMapperV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.mapper.BrandJpaMapperV2;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity.FoodJpaEntityV2;
 import org.mapstruct.Mapper;
 

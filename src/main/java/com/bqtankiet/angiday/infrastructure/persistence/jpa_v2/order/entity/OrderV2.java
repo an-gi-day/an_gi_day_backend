@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.PaymentV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.entity.PaymentJpaEntityV2;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,7 +40,7 @@ public class OrderV2 {
             mappedBy = "order",
             cascade = CascadeType.ALL
     )
-    private PaymentV2 payment;
+    private PaymentJpaEntityV2 payment;
 
     @OneToOne(
             mappedBy = "order",

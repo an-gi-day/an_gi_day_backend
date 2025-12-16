@@ -1,7 +1,9 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.repository;
 
 import com.bqtankiet.angiday.domain.brand.Brand;
 import com.bqtankiet.angiday.domain.brand.IBrandRepository;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.entity.BrandJpaEntityV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.mapper.BrandJpaMapperV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

@@ -32,6 +32,7 @@ public class OrderRepositoryImpl implements IOrderRepository {
 
     @Override
     public Optional<Order> saveOrder(Order order) {
+        System.out.println(order);
         OrderJpaEntity orderJpaEntity = orderJpaMapper.modelToDto(order);
         OrderJpaEntity savedOrder = orderJpaRepository.save(orderJpaEntity);
         return Optional.of(orderJpaMapper.toDomain(savedOrder));

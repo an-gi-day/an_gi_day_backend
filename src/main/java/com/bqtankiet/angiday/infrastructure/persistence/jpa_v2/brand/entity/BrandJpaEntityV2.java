@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

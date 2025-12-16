@@ -1,5 +1,6 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.repository;
 
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.entity.BrandJpaEntityV2;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

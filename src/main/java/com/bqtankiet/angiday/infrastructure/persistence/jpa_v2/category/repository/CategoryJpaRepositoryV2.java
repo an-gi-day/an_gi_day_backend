@@ -1,5 +1,6 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category.repository;
 
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category.entity.CategoryJpaEntityV2;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

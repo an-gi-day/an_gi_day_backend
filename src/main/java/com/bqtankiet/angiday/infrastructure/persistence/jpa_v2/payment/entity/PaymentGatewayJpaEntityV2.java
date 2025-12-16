@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,7 +7,7 @@ import lombok.*;
 @Table(name = "payment_gateways_v2")
 @Getter
 @Setter
-public class PaymentGatewayV2 {
+public class PaymentGatewayJpaEntityV2 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.base;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2;
 
 public interface JpaMapperV2<D, E> {
 

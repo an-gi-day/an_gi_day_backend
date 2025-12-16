@@ -1,6 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.voucher.VoucherV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.voucher.entity.VoucherJpaEntityV2;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +20,7 @@ public class OrderVoucherV2 {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "voucher_id")
-    private VoucherV2 voucher;
+    private VoucherJpaEntityV2 voucher;
 
     private long discountAmount;
 }

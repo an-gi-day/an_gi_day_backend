@@ -22,7 +22,7 @@ public class DraftOrderCommandMapper {
                 request.items()
                         .stream()
                         .map(i -> new DraftOrderCommand.OrderItem(
-                                i.foodId(), i.optionIds()
+                                i.foodId(), i.quantity(), i.optionIds()
                         )).toList()
         );
         return draftOrderCommand;

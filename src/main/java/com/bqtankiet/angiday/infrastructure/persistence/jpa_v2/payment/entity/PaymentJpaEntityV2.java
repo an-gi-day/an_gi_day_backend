@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.payment.entity;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.order.entity.OrderV2;
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,7 +9,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "payments_v2")
 @Getter @Setter
-public class PaymentV2 {
+public class PaymentJpaEntityV2 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +20,14 @@ public class PaymentV2 {
     private OrderV2 order;
 
     @Enumerated(EnumType.STRING)
-    private PaymentMethodV2 method;
+    private PaymentMethodJpaEntityV2 method;
 
     @Enumerated(EnumType.STRING)
-    private PaymentStatusV2 status;
+    private PaymentStatusJpaEntityV2 status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "gateway_id")
-    private PaymentGatewayV2 gateway;
+    private PaymentGatewayJpaEntityV2 gateway;
 
     @CreationTimestamp
     private Instant createdAt;

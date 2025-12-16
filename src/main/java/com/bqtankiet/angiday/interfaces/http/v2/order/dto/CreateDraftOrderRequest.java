@@ -9,6 +9,7 @@ public record CreateDraftOrderRequest(
 ) {
     public record OrderItem(
            Long foodId,
+           Integer quantity,
            List<Long> optionIds
     ){}
 }

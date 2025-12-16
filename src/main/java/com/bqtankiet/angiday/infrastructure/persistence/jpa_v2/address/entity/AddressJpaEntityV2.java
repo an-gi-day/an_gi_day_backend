@@ -1,4 +1,4 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderPricing {
     private int amount;
-    private int shipping;
+    private int shippingFee;
     private int discount;
     private int total;
 

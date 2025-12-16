@@ -1,7 +1,7 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.food.entity;
 
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.BrandJpaEntityV2;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category.CategoryJpaEntityV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.brand.entity.BrandJpaEntityV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.category.entity.CategoryJpaEntityV2;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

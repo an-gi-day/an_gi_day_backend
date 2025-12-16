@@ -1,15 +1,11 @@
 package com.bqtankiet.angiday.domain.food;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@EqualsAndHashCode
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class FoodOption {

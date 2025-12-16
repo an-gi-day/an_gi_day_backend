@@ -1,7 +1,9 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address.repository;
 
 import com.bqtankiet.angiday.domain.address.Address;
 import com.bqtankiet.angiday.domain.address.IAddressRepository;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address.entity.AddressJpaEntityV2;
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address.mapper.AddressJpaMapperV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

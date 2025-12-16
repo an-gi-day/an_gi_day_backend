@@ -1,5 +1,6 @@
-package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address;
+package com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address.repository;
 
+import com.bqtankiet.angiday.infrastructure.persistence.jpa_v2.address.entity.AddressJpaEntityV2;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

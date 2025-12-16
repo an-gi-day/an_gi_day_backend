@@ -18,6 +18,7 @@ public class DraftOrderCommand {
     @NoArgsConstructor
     public static class OrderItem {
         Long foodId;
+        Integer quantity;
         List<Long> optionIds;
     }
 

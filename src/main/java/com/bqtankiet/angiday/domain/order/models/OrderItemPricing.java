@@ -6,8 +6,8 @@ import lombok.*;
 
 import java.util.List;
 
-@Getter
-@EqualsAndHashCode
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItemPricing {

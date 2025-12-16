@@ -1,12 +1,10 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa.order.entity;
 
 import jakarta.persistence.Embeddable;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Embeddable
-@Getter
-@Setter
+@Data
 public class OrderPricingJpaEmbed {
 
     private int amount;

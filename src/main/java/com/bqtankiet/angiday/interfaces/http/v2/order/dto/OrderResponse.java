@@ -11,7 +11,7 @@ import java.time.Instant;
 public class OrderResponse {
     private Long id;
     private String status;
-    private OrderPricing pricing;
+    private OrderPricing orderPricing;
     private Instant createdAt;
     private Instant updatedAt;
 }
