@@ -4,7 +4,6 @@ import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.OrderResponseMapper;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +17,9 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(GetOrderController.ENDPOINT)
+@RequestMapping(GetOrderController.URL)
 public class GetOrderController {
-    public static final String ENDPOINT = "/api/v2/orders";
+    public static final String URL = "/api/v2/orders";
 
     private final GetOrderById getOrderById;
     private final OrderResponseMapper orderResponseMapper;
@@ -40,13 +39,13 @@ public class GetOrderController {
 
     private ApiResponse<?> responseSuccess(Order order) {
         var apiResponse = ApiResponse.success(orderResponseMapper.toDto(order));
-        URI location = URI.create(ENDPOINT +"/"+ order.getId());
+        URI location = URI.create(URL +"/"+ order.getId());
         apiResponse.addMetadata("_links", Map.of(
                 "_self", location.toString(),
                 "items", location + "/items",
                 "payment", location + "/payment",
                 "address", location + "/address",
-                "status", location + "/status"
+                "vouchers", location + "/vouchers"
         ));
         return apiResponse;
     }

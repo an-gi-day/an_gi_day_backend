@@ -21,10 +21,10 @@ import java.net.URI;
 import java.util.Map;
 
 @RestController
-@RequestMapping(CreateOrderDraftController.ENDPOINT)
+@RequestMapping(CreateOrderDraftController.URL)
 @RequiredArgsConstructor
 public class CreateOrderDraftController {
-    public static final String ENDPOINT = "/api/v2/orders";
+    public static final String URL = "/api/v2/orders";
 
     private final CheckoutOrderUseCase checkoutOrderUseCase;
     private final DraftOrderCommandMapper draftOrderCommandMapper;
@@ -61,7 +61,7 @@ public class CreateOrderDraftController {
     }
 
     private URI getLocation(Long orderId) {
-        return URI.create(ENDPOINT + "/" + orderId);
+        return URI.create(URL + "/" + orderId);
     }
 
     private Map<String, String> generateLinks(String location) {
@@ -70,7 +70,7 @@ public class CreateOrderDraftController {
                 "items", location + "/items",
                 "payment", location + "/payment",
                 "address", location + "/address",
-                "status", location + "/status"
+                "vouchers", location + "/vouchers"
         );
     }
 

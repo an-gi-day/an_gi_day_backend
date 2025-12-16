@@ -14,7 +14,11 @@ public class Address {
     private double latitude;
     private String location;
     private String name;
-    private String userId;
+    private Long userId;
     private boolean isDefault;
+
+    public boolean isValid() {
+        return id != null && phone!=null && userId != null;
+    }
 }
 

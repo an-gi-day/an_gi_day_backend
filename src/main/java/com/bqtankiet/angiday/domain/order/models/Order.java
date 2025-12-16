@@ -31,6 +31,8 @@ public class Order {
         this.appliedVouchers = new ArrayList<>();
         this.items = new ArrayList<>();
         this.createdAt = Instant.now();
+        this.payment =  new Payment();
+        this.status = "DRAFT";
     }
 
     public boolean addItem(OrderItem orderItem) {
@@ -38,4 +40,11 @@ public class Order {
         return items.add(orderItem);
     }
 
+    public boolean isValid() {
+        return items != null && !items.isEmpty() && payment.isValid() && address.isValid();
+    }
+
+    public boolean confirmed() {
+        return "CONFIRMED".equals(status);
+    }
 }

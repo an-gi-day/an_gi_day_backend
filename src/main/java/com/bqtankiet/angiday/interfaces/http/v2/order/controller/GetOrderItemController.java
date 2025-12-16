@@ -4,7 +4,6 @@ import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.domain.order.models.OrderItem;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
-import com.bqtankiet.angiday.interfaces.http.v2.order.mapper.OrderResponseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +16,10 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(GetOrderItemController.ENDPOINT)
+@RequestMapping(GetOrderItemController.URL)
 @RequiredArgsConstructor
 public class GetOrderItemController {
-    public static final  String ENDPOINT = "/api/v2/orders/{orderId}/items";
+    public static final  String URL = "/api/v2/orders/{orderId}/items";
     private final GetOrderById getOrderById;
 
     @GetMapping()

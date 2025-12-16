@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(GetOrderAddressController.ENDPOINT)
+@RequestMapping(GetOrderAddressController.URL)
 @RequiredArgsConstructor
 public class GetOrderAddressController {
-    public static final String ENDPOINT = "/api/v2/orders/{orderId}/address";
+    public static final String URL = "/api/v2/orders/{orderId}/address";
 
     private final GetOrderById getOrderById;
 

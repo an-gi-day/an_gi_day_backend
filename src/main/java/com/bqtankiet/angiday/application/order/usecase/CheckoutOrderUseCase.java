@@ -10,12 +10,12 @@ import com.bqtankiet.angiday.domain.food.FoodOptionValue;
 import com.bqtankiet.angiday.domain.order.models.Order;
 import com.bqtankiet.angiday.domain.order.models.OrderItem;
 import com.bqtankiet.angiday.domain.order.repository.IOrderRepository;
+import com.bqtankiet.angiday.domain.payment.Payment;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -49,7 +49,6 @@ public class CheckoutOrderUseCase {
 
         Order order = new Order(userId);
         order.setAddress(address);
-        order.setStatus("DRAFT");
 
         for (DraftOrderCommand.OrderItem i: command.getItems()) {
             Food food =  getFoodById.call(i.getFoodId());

@@ -6,11 +6,11 @@ import java.util.Map;
 
 @Data
 public class PaymentGateway {
-    private Long id;
-    private String name;
-    private String transactionId;
-    private String appUrl;
-    private String webUrl;
-    private Map<String, Object> extraData;
+    protected Long id;
+    protected String name;
+    protected String transactionId;
+    protected String appUrl;
+    protected String webUrl;
+    protected Map<String, Object> extraData;
 
 }
