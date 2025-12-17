@@ -17,7 +17,7 @@ public class OrderItemResponse {
     @Setter
     public static class OrderItemPricing {
         private int quantity;
-        private long unitPrice;
+        private long amount;
         private long optionCost;
         private long subtotal;
     }

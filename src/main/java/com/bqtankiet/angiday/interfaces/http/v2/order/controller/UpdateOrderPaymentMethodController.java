@@ -3,6 +3,7 @@ package com.bqtankiet.angiday.interfaces.http.v2.order.controller;
 import com.bqtankiet.angiday.application.order.usecase.GetOrderById;
 import com.bqtankiet.angiday.application.order.usecase.SaveOrderUseCase;
 import com.bqtankiet.angiday.domain.order.models.Order;
+import com.bqtankiet.angiday.domain.payment.Payment;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +32,8 @@ public class UpdateOrderPaymentMethodController {
             validatePaymentMethod(paymentMethod);
             Order order = getAndHandleError(orderId);
             order.getPayment().setPaymentMethod(paymentMethod);
+            order.getPayment().setGateway(null);
+            order.getPayment().setPaymentStatus("DRAFT");
             Order updatedOrder = saveOrderUseCase.call(order);
             return ResponseEntity.ok().body(ApiResponse.success(updatedOrder.getPayment()));
         } catch (Exception e) {

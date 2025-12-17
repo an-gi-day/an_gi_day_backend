@@ -38,6 +38,6 @@ public class ConfirmOrderController {
     private ApiResponse<?> responseSuccess(Order order) {
         var apiResponse = ApiResponse.success(orderResponseMapper.toDto(order));
         apiResponse.addMetadata("_links", GenerateOrderLinks.generate(order.getId()));
-        return ApiResponse.success(apiResponse);
+        return apiResponse;
     }
 }

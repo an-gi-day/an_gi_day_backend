@@ -9,7 +9,7 @@ public class GenerateOrderLinks {
     public static Map<String, String> generate(Long orderId) {
         String location = GetOrderController.URL + "/" +orderId;
         return Map.of(
-                "_self", location,
+                "order", location,
                 "items", location + "/items",
                 "payment", location + "/payment",
                 "address", location + "/address",
