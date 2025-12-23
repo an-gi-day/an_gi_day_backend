@@ -44,4 +44,9 @@ public class OrderRepositoryImpl implements IOrderRepository {
     public void removeOrderByUserIdAndStatus(Long userId, String status) {
         orderJpaRepository.deleteByUserIdAndStatus(userId, status);
     }
+
+    @Override
+    public Optional<Order> findByCode(String code) {
+        return orderJpaRepository.findByCode(code);
+    }
 }

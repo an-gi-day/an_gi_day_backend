@@ -12,4 +12,6 @@ public interface IOrderRepository {
     Optional<Order> saveOrder(Order order);
 
     void removeOrderByUserIdAndStatus(Long userId, String draft);
+
+    Optional<Order> findByCode(String code);
 }

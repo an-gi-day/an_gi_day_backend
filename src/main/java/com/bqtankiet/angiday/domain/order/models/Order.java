@@ -16,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Order {
     private Long id;
+    private String code;
     private List<OrderItem> items;
     private OrderPricing orderPricing;
     private Payment payment;
@@ -46,5 +47,9 @@ public class Order {
 
     public boolean confirmed() {
         return "CONFIRMED".equals(status);
+    }
+
+    public boolean isPaid() {
+        return  "PAID".equals(payment.getPaymentStatus());
     }
 }
