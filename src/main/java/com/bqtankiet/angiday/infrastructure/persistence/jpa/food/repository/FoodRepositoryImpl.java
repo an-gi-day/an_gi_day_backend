@@ -43,7 +43,8 @@ public class FoodRepositoryImpl implements IFoodRepository {
 
     @Override
     public List<Food> findAllByCategoryId(Long categoryId) {
-        return List.of();
+        var rs = foodJpaRepository.findAllByCategory_Id(categoryId);
+        return rs.stream().map(foodJpaMapper::toDomain).toList();
     }
 
     @Override

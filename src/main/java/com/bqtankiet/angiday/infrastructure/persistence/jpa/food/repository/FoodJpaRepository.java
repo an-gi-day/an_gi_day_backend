@@ -1,5 +1,6 @@
 package com.bqtankiet.angiday.infrastructure.persistence.jpa.food.repository;
 
+import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.entity.FoodJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -29,4 +30,5 @@ public interface FoodJpaRepository extends JpaRepository<FoodJpaEntity, Long> {
     List<FoodJpaEntity> search(@Param("keyword") String keyword);
 
 
+    List<FoodJpaEntity> findAllByCategory_Id(Long categoryId);
 }
