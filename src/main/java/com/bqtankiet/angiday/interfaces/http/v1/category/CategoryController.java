@@ -1,6 +1,7 @@
 package com.bqtankiet.angiday.interfaces.http.v1.category;
 
 import com.bqtankiet.angiday.application.category.usecase.GetAllCategory;
+import com.bqtankiet.angiday.application.category.usecase.GetCategoryById;
 import com.bqtankiet.angiday.application.food.usecase.GetFoodsByCategoryId;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
 import com.bqtankiet.angiday.interfaces.http.v1.food.FoodRespDto;
@@ -23,6 +24,7 @@ public class CategoryController {
     private final CategoryResponseMapper categoryMapper;
     private final GetFoodsByCategoryId getFoodsByCategoryId;
     private final FoodRespMapper foodMapper;
+    private final GetCategoryById getCategoryById;
 
     @GetMapping()
     public ResponseEntity<?> category() {
@@ -33,6 +35,13 @@ public class CategoryController {
             ApiResponse<?> apiResponse = ApiResponse.success(dto);
             apiResponse.addMetadata("size", dto.size());
             return ResponseEntity.ok(apiResponse);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> categoryById(@PathVariable Long id) {
+        var category = getCategoryById.call(id);
+        ApiResponse<?> apiResponse = ApiResponse.success(category);
+        return ResponseEntity.ok(apiResponse);
     }
 
     @GetMapping("/{id}/foods")

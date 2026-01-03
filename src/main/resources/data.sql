@@ -25,7 +25,8 @@ VALUES (1, 'Highland',
         'https://play-lh.googleusercontent.com/W_DYClcNS6Jge8IZJIocA_fr6qkz7wbB_Xq92o8ACa-nYRl8ZzAiVenxqdPxu5aFb3Mb'),
        (5, 'Pizza Hut',
         'https://play-lh.googleusercontent.com/75zvOkV2CUS775itXQv8mDTUGn1Cl4Y7jxyx2Y91VajUBVeVP2BOTI83g9th8twuuw'),
-       (6, 'McDonald''s', 'https://loop.com.vn/storage/logo-m-01.jpg');
+       (6, 'McDonald''s', 'https://loop.com.vn/storage/logo-m-01.jpg'),
+       (9, 'Bánh mì 362', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw9XkScM-9UchOBZxscj9gAbZOHs9ED_5IRg&s');
 
 
 INSERT INTO foods (id, image_url, name, name_no_accent, base_price, description, brand_id, category_id)
@@ -54,7 +55,7 @@ VALUES (1, 'https://media.loveitopcdn.com/24813/thumb/600x600/z4564243657819-f5b
 
        (6, 'https://noiphosaigon.vn/wp-content/uploads/2020/09/cach-lam-banh-bao-nhan-thit-thom-ngon.jpg',
         'Bánh bao thịt', 'Banh bao thit', 25000.0,
-        'Bánh bao thịt nóng hổi, nhân thịt thơm ngon, mềm mịn.', 3, 7),
+        'Bánh bao thịt nóng hổi, nhân thịt thơm ngon, mềm mịn.', 3, 2),
 
        (7, 'https://banhmihuynhhoa.vn/wp-content/uploads/2024/10/dscf0711-min-1-300x300.jpg',
         'Bánh mì Huỳnh Hoa', 'Banh mi Huynh Hoa', 40000.0,
