@@ -11,7 +11,7 @@ import java.util.Optional;
 /**
  * @author bqtankiet
  */
-@Repository
+@Repository("BrandRepositoryImpl")
 public class BrandRepositoryImpl implements IBrandRepository {
 
     private final BrandJpaRepository brandJpaRepository;
@@ -27,14 +27,14 @@ public class BrandRepositoryImpl implements IBrandRepository {
     public List<Brand> findAll() {
         List<BrandJpaEntity> rs = brandJpaRepository.findAll();
         return rs.stream()
-                .map(brandJpaMapper::dtoToModel)
+                .map(brandJpaMapper::toDomain)
                 .toList();
     }
 
     @Override
-    public Optional<Brand> findById(String id) {
+    public Optional<Brand> findById(Long id) {
         return brandJpaRepository
-                .findById(Long.parseLong(id))
-                .map(brandJpaMapper::dtoToModel);
+                .findById(id)
+                .map(brandJpaMapper::toDomain);
     }
 }

@@ -8,11 +8,11 @@ import java.util.Optional;
  */
 public interface IFoodRepository {
 
-    Optional<Food> findById(String id);
+    Optional<Food> findById(Long id);
 
     List<Food> findAll();
 
-    List<Food> findAllByCategoryId(String categoryId);
+    List<Food> findAllByCategoryId(Long categoryId);
 
     //    phong
     List<Food> searchByKeyword(String keyword);

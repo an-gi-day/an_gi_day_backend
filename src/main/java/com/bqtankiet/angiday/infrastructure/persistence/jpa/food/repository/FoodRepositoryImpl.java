@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /**
  * @author bqtankiet
  */
-@Repository
+@Repository("FoodRepositoryImpl")
 public class FoodRepositoryImpl implements IFoodRepository {
 
     private final FoodJpaRepository foodJpaRepository;
@@ -27,9 +27,9 @@ public class FoodRepositoryImpl implements IFoodRepository {
     }
 
     @Override
-    public Optional<Food> findById(String id) {
-        FoodJpaEntity entity = foodJpaRepository.findById(Long.parseLong(id)).orElse(null);
-        Food food = foodJpaMapper.dtoToModel(entity);
+    public Optional<Food> findById(Long id) {
+        FoodJpaEntity entity = foodJpaRepository.findById(id).orElse(null);
+        Food food = foodJpaMapper.toDomain(entity);
         return Optional.ofNullable(food);
     }
 
@@ -37,12 +37,12 @@ public class FoodRepositoryImpl implements IFoodRepository {
     public List<Food> findAll() {
         var rs = foodJpaRepository.findAll();
         return rs.stream()
-                .map(foodJpaMapper::dtoToModel)
+                .map(foodJpaMapper::toDomain)
                 .toList();
     }
 
     @Override
-    public List<Food> findAllByCategoryId(String categoryId) {
+    public List<Food> findAllByCategoryId(Long categoryId) {
         return List.of();
     }
 
@@ -51,7 +51,7 @@ public class FoodRepositoryImpl implements IFoodRepository {
         String keywordNoAccent = removeAccent(keyword);
         return foodJpaRepository.search(keywordNoAccent)
                 .stream()
-                .map(foodJpaMapper::dtoToModel)
+                .map(foodJpaMapper::toDomain)
                 .collect(Collectors.toList());
     }
 

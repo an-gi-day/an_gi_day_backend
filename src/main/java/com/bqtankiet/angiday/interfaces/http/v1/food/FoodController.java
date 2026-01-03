@@ -4,8 +4,8 @@ import com.bqtankiet.angiday.application.food.usecase.GetAllFood;
 import com.bqtankiet.angiday.application.food.usecase.GetFoodById;
 import com.bqtankiet.angiday.application.food.usecase.SearchUseCase;
 import com.bqtankiet.angiday.domain.food.Food;
-import com.bqtankiet.angiday.infrastructure.persistence.jpa.food.mapper.FoodJpaMapper;
 import com.bqtankiet.angiday.interfaces.http.base.ApiResponse;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/api/v1/foods")
+@Log4j2
 public class FoodController {
 
     private final GetAllFood getAllFood;
@@ -44,7 +45,7 @@ public class FoodController {
     public ResponseEntity<?> getAllFood() {
         var rs = getAllFood.call();
         var dto = rs.stream()
-                .map(foodRespMapper::modelToDto)
+                .map(foodRespMapper::toDto)
                 .toList();
         var resp = ApiResponse.success(dto);
         resp.addMetadata("size", dto.size());
@@ -55,7 +56,7 @@ public class FoodController {
      * Lấy food theo id
      */
     @GetMapping("/{foodId}")
-    public ResponseEntity<?> getFoodById(@PathVariable String foodId) {
+    public ResponseEntity<?> getFoodById(@PathVariable Long foodId) {
         Food food = getFoodById.call(foodId);
 
         // FAILED: Not found with id
@@ -66,7 +67,7 @@ public class FoodController {
         }
 
         // SUCCESS
-        var foodDto = foodWithOptionsMapper.modelToDto(food);
+        var foodDto = foodWithOptionsMapper.toDto(food);
         return ResponseEntity.ok(ApiResponse.success(foodDto));
     }
 
@@ -77,7 +78,7 @@ public class FoodController {
     public ResponseEntity<?> searchFood(@RequestParam String keyword) {
         var rs = searchUseCase.call(keyword);
         var dto = rs.stream()
-                .map(foodRespMapper::modelToDto)
+                .map(foodRespMapper::toDto)
                 .toList();
 
         var resp = ApiResponse.success(dto);

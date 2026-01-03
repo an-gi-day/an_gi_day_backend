@@ -1,11 +1,15 @@
 package com.bqtankiet.angiday.domain.order.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderPricing {
     private int amount;
-    private int shipping;
+    private int shippingFee;
     private int discount;
     private int total;
 

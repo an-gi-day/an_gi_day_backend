@@ -4,6 +4,7 @@ import com.bqtankiet.angiday.application.base.NoInputUseCase;
 import com.bqtankiet.angiday.domain.food.Food;
 import com.bqtankiet.angiday.domain.food.IFoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,9 @@ public class GetAllFood implements NoInputUseCase<List<Food>> {
     private final IFoodRepository foodRepository;
 
     @Autowired
-    public GetAllFood(IFoodRepository foodRepository) {
+    public GetAllFood(
+            @Qualifier("FoodRepositoryImpl")
+            IFoodRepository foodRepository) {
         this.foodRepository = foodRepository;
     }
 

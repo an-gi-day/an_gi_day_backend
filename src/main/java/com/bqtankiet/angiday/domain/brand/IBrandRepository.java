@@ -10,5 +10,5 @@ public interface IBrandRepository {
 
     List<Brand> findAll();
 
-    Optional<Brand> findById(String id);
+    Optional<Brand> findById(Long id);
 }
