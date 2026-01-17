@@ -39,7 +39,6 @@ public class MoMoPaymentProvider implements PaymentGatewayProvider {
 
             String requestId = String.valueOf(System.currentTimeMillis());
             String orderId = String.valueOf(order.getCode());
-//            long amount = order.getOrderPricing().getTotal();
             long amount = order.getOrderPricing().getTotal();
 
             String orderInfo = "Thanh toán đơn hàng AnGiDay";
