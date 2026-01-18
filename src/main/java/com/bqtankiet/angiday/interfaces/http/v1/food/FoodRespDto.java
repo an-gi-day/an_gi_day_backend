@@ -12,16 +12,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @param imageUrl
  * @param brand
  * @param category
- * @param soldCount
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record FoodRespDto(
-        String id,
+        Long id,
         String name,
         String description,
         String imageUrl,
+        Double basePrice,
         BrandResponseDto brand,
-        CategoryResponseDto category,
-        Integer soldCount
+        CategoryResponseDto category
 ) {
 }

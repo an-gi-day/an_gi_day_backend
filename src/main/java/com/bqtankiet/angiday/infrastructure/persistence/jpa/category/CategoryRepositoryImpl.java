@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
  * @author bqtankiet
  */
-@Repository
+@Repository("CategoryRepositoryImpl")
 public class CategoryRepositoryImpl implements ICategoryRepository {
     private final CategoryJpaRepository repositoryJpa;
     private final CategoryJpaMapper mapper;
@@ -26,7 +27,12 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
     public List<Category> findAll() {
         return repositoryJpa.findAll()
                 .stream()
-                .map(mapper::dtoToModel)
+                .map(mapper::toDomain)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Optional<Category> findById(Long categoryId) {
+        return repositoryJpa.findById(categoryId).map(mapper::toDomain);
     }
 }

@@ -2,15 +2,19 @@ package com.bqtankiet.angiday.domain.food;
 
 import com.bqtankiet.angiday.domain.brand.Brand;
 import com.bqtankiet.angiday.domain.category.Category;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * POJO Food model
- *
- * @author bqtankiet
- */
+import java.util.Collections;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Food {
 
-    private String id;
+    private Long id;
     private String name;
     private String imageUrl;
     private String description;
@@ -18,71 +22,16 @@ public class Food {
     private Category category;
     private Brand brand;
     private Integer soldCount;
+    private List<FoodOption> options;
 
-    public Food() {}
-
-    // Getter & Setter
-    public String getId() {
-        return id;
+    public List<FoodOptionValue> getOptionValuesByIds(List<Long> ids) {
+        if (ids == null || ids.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return options.stream()
+                .flatMap(o -> o.getOptionValues().stream())
+                .filter(v -> ids.contains(v.getId()))
+                .toList();
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getBasePrice() {
-        return basePrice;
-    }
-
-    public void setBasePrice(Double basePrice) {
-        this.basePrice = basePrice;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Brand getBrand() {
-        return brand;
-    }
-
-    public void setBrand(Brand brand) {
-        this.brand = brand;
-    }
-
-    public Integer getSoldCount() {
-        return soldCount;
-    }
-
-    public void setSoldCount(Integer soldCount) {
-        this.soldCount = soldCount;
-    }
 }

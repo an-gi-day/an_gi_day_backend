@@ -25,22 +25,22 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public Optional<User> findById(String id) {
-        return userRepositoryJpa.findById(Long.parseLong(id)).map(userJpaMapper::dtoToModel);
+        return userRepositoryJpa.findById(Long.parseLong(id)).map(userJpaMapper::toDomain);
     }
 
     @Override
     public Optional<User> findByName(String name) {
-        return userRepositoryJpa.findByName(name).map(userJpaMapper::dtoToModel);
+        return userRepositoryJpa.findByName(name).map(userJpaMapper::toDomain);
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
-        return userRepositoryJpa.findByEmail(email).map(userJpaMapper::dtoToModel);
+        return userRepositoryJpa.findByEmail(email).map(userJpaMapper::toDomain);
     }
 
     @Override
     public Optional<User> findByPhone(String phone) {
-        return userRepositoryJpa.findByPhone(phone).map(userJpaMapper::dtoToModel);
+        return userRepositoryJpa.findByPhone(phone).map(userJpaMapper::toDomain);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class UserRepositoryImpl implements IUserRepository {
     public List<User> findAll() {
         return userRepositoryJpa.findAll()
                 .stream()
-                .map(userJpaMapper::dtoToModel)
+                .map(userJpaMapper::toDomain)
                 .collect(Collectors.toList());
     }
 
