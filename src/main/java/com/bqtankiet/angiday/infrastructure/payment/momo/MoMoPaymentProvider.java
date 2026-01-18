@@ -39,14 +39,13 @@ public class MoMoPaymentProvider implements PaymentGatewayProvider {
 
             String requestId = String.valueOf(System.currentTimeMillis());
             String orderId = String.valueOf(order.getCode());
-//            long amount = order.getOrderPricing().getTotal();
-            long amount = 1000; // test
+            long amount = order.getOrderPricing().getTotal();
 
             String orderInfo = "Thanh toán đơn hàng AnGiDay";
             String extraData = "";
             String bankCode = "SML";
             String customerNumber = "0963181714";
-            String returnURL = "angiday:/home";
+            String returnURL = "angiday:/order-success";
             String notifyURL = prop.getProperty("DEV_IPN_URL");
 
             Environment environment = Environment.selectEnv(Environment.EnvTarget.DEV);
