@@ -45,7 +45,7 @@ public class MoMoPaymentProvider implements PaymentGatewayProvider {
             String extraData = "";
             String bankCode = "SML";
             String customerNumber = "0963181714";
-            String returnURL = "angiday:/home";
+            String returnURL = "angiday:/order-success";
             String notifyURL = prop.getProperty("DEV_IPN_URL");
 
             Environment environment = Environment.selectEnv(Environment.EnvTarget.DEV);
